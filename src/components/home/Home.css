@@ -1,0 +1,94 @@
+.home-page__section--intro {
+    background-color: rgb(237, 234, 230);
+    height: 60vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 6fr 4fr;
+}
+.animate-charcter
+{
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #15572b 0%,
+    #107a53 29%,
+    #23ff13 67%,
+    #00ff33 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 1.5s linear ;
+  display: inline-block;
+      font-size: 4rem;
+      font-weight: 700;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.line-1 {
+    letter-spacing: 6px;
+}
+
+.rupee-note {
+    height: 80%;
+    width: 90%;
+    margin: 0%;
+    padding: 0%;
+    border: none;
+    /*  */
+    
+    
+    /* display: block; */
+    /* position: absolute; */
+    animation: linear alternate;
+    animation-name: run;
+    animation-duration: 0.6s;
+    
+}
+
+
+  @-webkit-keyframes run {
+      0% {
+        /* left: 0; */
+        transform: translateX(-100%);
+      }
+      100% {
+        /* left: 100%; */
+        transform: translateX(0%);
+      }
+  }
+
+
+  /* ========== */
+
+  .home-page__section--service {
+    height: 120vh;
+    width: 100%;
+    padding-top: 4rem;
+    background-color: #cfcbcb;
+  }
+  
+
+  .title {
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+  
+  .cards-container {
+    background-color: #15572b;
+    height: 60vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* z-index: 1; */
+  }

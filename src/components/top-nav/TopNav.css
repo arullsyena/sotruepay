@@ -1,0 +1,43 @@
+.top-nav {
+    position: fixed;
+    top: 0; /* Aligns it to the top */
+    left: 0; /* Aligns it to the left */
+    width: 100%; /* Makes the navbar span the full width of the viewport */
+    display: flex;
+    justify-content: space-between;
+    /* background-color: aqua;
+    height: 7.5vh; */
+    padding: 0 10px;
+    margin-top: 1.5rem;
+    /*  */
+    
+/* From https://css.glass */
+background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+
+}
+
+.top-nav__list {
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row; */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    align-items: center; 
+    justify-content: center;
+    background-color: aquamarine;
+    height: inherit;
+    margin: 0;
+    padding: 0%;
+    list-style: none;
+    width: 30%;
+}
+
+/* .top-nav__list > * {
+    content: ;
+} */
