@@ -1,0 +1,49 @@
+.accordions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10vh;
+    
+  }
+  
+  .accordion {
+    background: linear-gradient(200deg, rgb(29, 145, 252) 13.57%, rgb(90, 54, 192) 98.38%);
+    width: max(50vw, 280px);
+    padding: 25px 30px 10px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 30px 30px -10px rgba(0, 0, 0, .3);
+    height:7rem;
+    
+    &:nth-child(2) {
+      background: linear-gradient(200deg, rgb(242, 136, 133) 13.57%, rgb(233, 79, 102) 98.38%);
+    }
+    
+    &:nth-child(3) {
+      background: linear-gradient(200deg, rgb(101, 187, 118) 13.57%, rgb(70, 111, 171) 98.38%);
+    }
+    
+    &:nth-child(4) {
+      background: linear-gradient(200deg, #c215d1 13.57%, #9813a1 98.38%);
+    }
+  }
+  
+  .spacer {
+    height: 10vh;
+  }
+  
+  @media (max-width: 480px) {
+    .accordion {
+      padding: 15px 20px 8px;
+    }
+    .title {
+      font-size: 20px;
+    }
+  }
+
+  .accordian-content {
+    background-color: gray;
+    height: 50rem;
+    width: 100%;
+    padding: 3rem 0;
+  }

@@ -4,21 +4,24 @@ import chessKing from "../../assets/chessKing.png";
 import chessFont from "../../assets/chessFont.png";
 const Cards = () => {
   return (
-    <>
-      <a
-        href='https://www.mythrillfiction.com/the-dark-rider'
-        alt='Mythrill'
-        target='_blank'
-      >
+    <div className='card-wrapper'>
+      <div className='a'>
+        {/* <a
+          
+          alt='Mythrill'
+          target='_blank'
+          id='ttt'
+        > */}
         <div className='card'>
           <div className='wrapper'>
             <img src={chess} className='cover-image' />
           </div>
-          <img src={chessFont} className='title' />
-          {/* CHESS */}
+          {/* <img src={chessFont} className='title' /> */}
+
           <img src={chessKing} className='character' />
         </div>
-      </a>
+        {/* </a> */}
+      </div>
 
       {/* <a
         href='https://www.mythrillfiction.com/force-mage'
@@ -42,7 +45,7 @@ const Cards = () => {
           />
         </div>
       </a> */}
-    </>
+    </div>
   );
 };
 export default Cards;

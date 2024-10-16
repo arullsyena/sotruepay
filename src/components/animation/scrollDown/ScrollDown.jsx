@@ -38,7 +38,7 @@ const ScrollDown = () => {
         src={image}
         alt='My Animated Image'
         style={{
-          width: "60%",
+          width: "40%",
           height: "80%",
         }}
       />
