@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./TopNav.css";
 import { RxHamburgerMenu, RxCross2 } from "react-icons/rx";
-const TopNav = () => {
+const TopNav = ({ navItemsList }) => {
   const [open, setOpen] = useState(false);
   useEffect(() => {
     const closeNavbar = () => {
@@ -75,7 +75,12 @@ const TopNav = () => {
       </a>
 
       <ul className={`${open ? "top-nav__list active" : "top-nav__list"}`}>
-        <li>
+        {navItemsList.map((navItem) => (
+          <li className={`nav-item ${navItem.className}`}>
+            <a href='#'>{navItem.displayName}</a>
+          </li>
+        ))}
+        {/* <li>
           <a href='#'>About</a>
         </li>
         <li>
@@ -86,7 +91,7 @@ const TopNav = () => {
         </li>
         <li>
           <a href='#'>Contact</a>
-        </li>
+        </li> */}
       </ul>
       <div className='mobile-nav'>
         <button

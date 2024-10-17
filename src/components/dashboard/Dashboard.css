@@ -1,0 +1,26 @@
+
+.panel-container{
+    background-color: aquamarine;
+    height: 98%;
+    width: 95%;
+    margin: 0 2.5% ;
+    box-sizing: border-box;
+}
+
+.sidenav-container{
+width: 220px; /* Set a fixed width for the sidebar */
+background-color: #f4f4f4; /* Optional: Sidebar background color */
+}
+
+.main-panel {
+flex-grow: 1; /* Allow the main content to take the remaining space */
+padding: 20px; /* Optional: Padding for the main content */
+background-color: #fff; /* Optional: Main content background color */
+}
+
+/* response */
+@media (max-width: 768px) {
+    .sidenav-container{
+        display: none;
+    }
+}

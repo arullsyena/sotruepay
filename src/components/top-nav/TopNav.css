@@ -67,8 +67,15 @@ color:#17cf97;
     display: none; /* Initially hidden */
     margin-left: auto;
   }
+
+  .sml-scrn-only{
+    display: none;
+  }
  
   @media (max-width: 768px) {
+    .sml-scrn-only {
+        display: inline;
+      }
     .top-nav{
         display: flex;
         align-items: center;
