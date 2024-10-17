@@ -33,8 +33,9 @@ const PopularGames = () => {
       <div className='spacer'></div>
 
       <div className='cards-container'>
-        {cardContent.map((cardContent) => (
+        {cardContent.map((cardContent, index) => (
           <Cards
+            key={index}
             imgs1={cardContent.coverImage}
             imgs2={cardContent.threeDImg}
             titleImg={cardContent.titleImg}

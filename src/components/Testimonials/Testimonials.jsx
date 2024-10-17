@@ -24,16 +24,16 @@ const Testimonials = () => {
     },
   ];
   return (
-    <div class='innerdiv'>
+    <div class='testimonial-innerdiv'>
       {testimonials.map((testimonial) => (
-        <div class='div1 eachdiv'>
+        <div class='testimonial-div1 testimonial-eachdiv'>
           <div class='userdetails'>
             <div class='detbox'>
-              <p class='name'>{testimonial.name}</p>
-              <p class='designation'>{testimonial.desination}</p>
+              <p class='detbox--name'>{testimonial.name}</p>
+              <p class='detbox--designation'>{testimonial.desination}</p>
             </div>
           </div>
-          <div class='review'>
+          <div class='testimonial-review'>
             <h4>{testimonial.review}</h4>
           </div>
         </div>

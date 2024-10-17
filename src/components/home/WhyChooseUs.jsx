@@ -45,15 +45,15 @@ const features = [
 const WhyChooseUs = () => {
   return (
     <section className='home-page__section home-page__section--why-choose'>
-      <h2 className='title'>Why Choose Us</h2>
+      <h2 className='section--title'>Why Choose Us</h2>
       <hr width='50%' color='#05e950' />
       <div className='spacer'></div>
       <div className='why-choose-container'>
         {features.map((feature, index) => (
-          <div key={index} className='boxes'>
+          <div key={index} className='info-card'>
             {feature.icon}
-            <h5 className='title'>{feature.title}</h5>
-            <p className='content'>{feature.content}</p>
+            <h5 className='info-card--title'>{feature.title}</h5>
+            <p className='info-card--content'>{feature.content}</p>
           </div>
         ))}
       </div>

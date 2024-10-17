@@ -9,7 +9,7 @@ a:link,a:active,a:visited,a:hover{
 	color:#3f51b5;
 }
 
-.innerdiv
+.testimonial-innerdiv
 {
 	transform: scale(0.9);
 	margin: 1rem;
@@ -18,14 +18,14 @@ a:link,a:active,a:visited,a:hover{
 	/* grid-template-rows: repeat(2,22rem); */
 	grid-template-columns: repeat(3, 2fr);
 }
-.eachdiv
+.testimonial-eachdiv
 {
 	padding: 1rem 2rem;
     border-radius: 0.8rem;
     box-shadow: 5px 5px 20px #6d6b6b6b;
     color: white;
 }
-.div1
+.testimonial-div1
 {
     border: 2px solid #05e950;
 	/* background: #329231; */
@@ -64,28 +64,22 @@ a:link,a:active,a:visited,a:hover{
 {
 	margin: 0;
 }
-.detbox .name
+.detbox--name
 {
 	color: black;
     font-size: 0.9rem;
     margin-bottom: 0.1rem;
     font-weight: 600;
 }
-.detbox .name.dark
-{
-	color: #000000;
-}
-.detbox .designation
+
+.detbox--designation
 {
 	color: hsl(0, 0%, 0%);
     opacity: 50%;
     font-size: 0.8rem;
 }
-.detbox .designation.dark
-{
-	color: #49505A;
-}
-.review h4
+
+.testimonial-review h4
 {
 	font-size: 1.4rem;
 	color: #313131;
@@ -93,7 +87,7 @@ a:link,a:active,a:visited,a:hover{
     line-height: 1.5;
     margin-bottom: 0.8rem;
 }
-.review.dark h4{
+.testimonial-review.dark h4{
 	color:#4B5258;
 }
 .attribution
@@ -112,24 +106,24 @@ a:link,a:active,a:visited,a:hover{
 
 @media only screen and (max-width: 1000px)
 {
-	.innerdiv
+	.testimonial-innerdiv
 	{
 		transform: scale(0.7);
 	}
 }
 @media only screen and (max-width: 800px)
 {
-	.innerdiv
+	.testimonial-innerdiv
 	{
 		transform: scale(0.6);
 	}
 }
 @media only screen and (max-width: 600px)
 {
-	.div1 {
+	.testimonial-div1 {
 		background-position-x: 10rem;
 	}
-	.innerdiv
+	.testimonial-innerdiv
 	{
 		display: flex; 
 		flex-direction: column;
