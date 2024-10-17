@@ -185,7 +185,7 @@
     font-weight: 700;
   }
   
-  .cards-container {
+  .gcards-container {
     background-color: #dfead9;
     height: 45vh;
     /* width: 100%; */
@@ -283,10 +283,10 @@
     width: 140px;
     height: 120px;
     position: fixed;
-  bottom: 5px; /* Adjust this value to move it closer or further from the bottom */
-  right: 160px; /* Adjust this value to move it closer or further from the right */
-  /* z-index: -1; */
+  bottom: 5px; 
+  right: 160px;
   opacity: 0.5; 
 }
+
 
   

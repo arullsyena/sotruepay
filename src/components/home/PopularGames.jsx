@@ -1,4 +1,4 @@
-import Cards from "../cards/Cards";
+import Cards from "../cards/GameCard";
 import chess4 from "../../assets/chess4.jpg";
 import chessKing from "../../assets/chessKing.png";
 import rummy1 from "../../assets/rummy1.jpg";
@@ -32,7 +32,7 @@ const PopularGames = () => {
       <hr width='50%' color='#05e950' />
       <div className='spacer'></div>
 
-      <div className='cards-container'>
+      <div className='gcards-container'>
         {cardContent.map((cardContent, index) => (
           <Cards
             key={index}

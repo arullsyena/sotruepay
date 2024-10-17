@@ -2,7 +2,7 @@ import Accordian from "../gsap/Accordian";
 
 const RobustSecurity = () => {
   return (
-    <section className='home-page__section home-page__section--security'>
+    <section className='home-page__section2 home-page__section--security'>
       <h2 className='section--title'>
         Robust Security and Wallet Management Solutions
       </h2>
