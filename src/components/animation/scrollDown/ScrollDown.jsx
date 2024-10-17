@@ -7,16 +7,12 @@ const ScrollDown = () => {
   const [yValue, setYValue] = useState(0);
 
   const handleScroll = () => {
-    // Update the Y-axis value with the current scroll position
     setYValue(window.scrollY);
     console.log(window.scrollY);
   };
 
   useEffect(() => {
-    // Add an event listener for scrolling
     window.addEventListener("scroll", handleScroll);
-
-    // Clean up the event listener when the component is unmounted
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -25,11 +21,9 @@ const ScrollDown = () => {
   return (
     <motion.div
       className='coin-container'
-      //   drag
-      //   dragConstraints={reference}
       animate={{
-        x: 100,
-        y: yValue + 500,
+        x: 1200,
+        y: yValue + 400,
         scale: 1,
         rotate: yValue,
       }}

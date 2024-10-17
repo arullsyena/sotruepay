@@ -1,43 +1,127 @@
 .top-nav {
-    position: fixed;
-    top: 0; /* Aligns it to the top */
-    left: 0; /* Aligns it to the left */
-    width: 100%; /* Makes the navbar span the full width of the viewport */
+    width: 95%; 
     display: flex;
     justify-content: space-between;
-    /* background-color: aqua;
-    height: 7.5vh; */
-    padding: 0 10px;
-    margin-top: 1.5rem;
-    /*  */
-    
-/* From https://css.glass */
+    align-items: center;
+    margin: 1.5rem auto;
+    padding: 10px;
+    box-sizing: border-box;
+    height: 7.5vh;
 background: rgba(255, 255, 255, 0.2);
-border-radius: 16px;
+border-radius: 10px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(5px);
 -webkit-backdrop-filter: blur(5px);
-border: 1px solid rgba(255, 255, 255, 0.3);
+/* border: 1px solid rgba(255, 255, 255, 0.3); */
+
+border: 1px solid #17cf97
+
+
 
 }
-
+.company-name{
+    color:gray;
+    display: flex;
+    align-items: center;
+    
+    
+}
+.company-name span{
+    margin-left: 10px;
+}
 .top-nav__list {
-    /* display: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row; */
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); 
-    align-items: center; 
-    justify-content: center;
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
     height: inherit;
     margin: 0;
-    padding: 0%;
-    list-style: none;
-    width: 30%;
+    padding: 0;
+    
+    
 }
 
 /* .top-nav__list > * {
     content: ;
 } */
+ .top-nav__list li{
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+ }
+ .top-nav__list li a{
+    
+    color:gray;
+    transition: 0.3s ease-in-out;
+ }
+ .top-nav__list li a:hover{
+color:#17cf97;
+ }
+.mobile-nav button{
+
+    width: 50px;
+    padding: 10px;
+    margin: 0;
+}
+.mobile-nav {
+    display: none; /* Initially hidden */
+    margin-left: auto;
+  }
+ 
+  @media (max-width: 768px) {
+    .top-nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+       
+    }
+    .mobile-nav {
+      display: block; /* Shown only on screens with a max width of 768px (mobile) */
+      text-align: end;
+      
+    }
+    .mobile-nav button{
+        border: none;
+        border-radius: 0%;
+        background-color:white;
+       
+        outline: none;
+    }
+    .mobile-nav button:focus {
+        outline: none; 
+      }
+      
+    .top-nav__list{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    position:fixed;
+    top: -800px;
+    right: 0px;
+    width:300px;
+    height:300px;
+    background: #2a3239;
+    box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+    padding: 30px 0 10px 10px;
+    border-radius: 10px;
+    
+    }
+    .top-nav__list.active{
+        top:50px;
+        transition: all 0.4s ease-in;
+        
+    }
+    .top-nav__list li{
+        margin-bottom: 25px;
+    }
+    .top-nav__list li a{
+        font-size: 20px;
+        
+        color:white;
+    }
+    .company-name{
+        color:black;
+        font-weight: 700;
+    }
+  }

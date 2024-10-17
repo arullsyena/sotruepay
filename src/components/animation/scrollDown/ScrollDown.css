@@ -1,7 +1,5 @@
 .coin-container {
     width: 10vw;
     height: 10vh;
-    /* background-color: red; */
-    /* background-image: url('../../../assets/image.png'); */
-    z-index: 10000;
+    z-index: 10000000;
 }
