@@ -6,6 +6,7 @@ import "./Dashboard.css";
 import TopNav from "../top-nav/TopNav";
 import SideNav from "./SideNav/SideNav";
 import { Route, Routes } from "react-router-dom"; // Import Routes
+import DashboardPanel from "./dashboardPanel/DashboardPanel";
 // import DashboardOverview from "./DashboardOverview"; // Example component
 // import DashboardSettings from "./DashboardSettings"; // Example component
 
@@ -31,21 +32,29 @@ const Dashboard = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <TopNav toggleTheme={toggleTheme} navItemsList={navItemsList} />
+      <TopNav
+        toggleTheme={toggleTheme}
+        navItemsList={navItemsList}
+        style={{
+          margin: "1.5rem 1.5rem 1.2rem 1.5rem",
+          width: "auto",
+        }}
+      />
       <div className='panel-container'>
         <div className='sidenav-container'>
           <SideNav />
         </div>
         <Wrapper className='main-panel'>
+          <DashboardPanel />
           <Routes>
             {" "}
             {/* Use Routes instead of Switch */}
             {/* <Route path='/dashboard' element={<DashboardOverview />} />{" "} */}
             {/* Use element prop */}
             {/* <Route
-                path='/dashboard/settings'
-                element={<DashboardSettings />}
-              />{" "} */}
+              path='/dashboard/dashboard'
+              element={<DashboardPanel />}
+            />{" "} */}
             {/* Use element prop */}
             {/* Add more routes as needed */}
           </Routes>

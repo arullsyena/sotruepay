@@ -1,0 +1,46 @@
+.dashboard-panel {
+    background-color: rgb(179, 179, 179);
+    height: 100%;
+    width: calc(100%-10px);
+    padding: 0 5px;
+}
+.info-card-container {
+   height:25vh;
+   display: flex;
+   align-items: center;
+}
+
+.graph-container {
+    height: 30vh;
+    width: auto;
+    background-color: aqua;
+}
+
+.transaction-table-1 {
+    height: 30vh;
+    width: auto;
+    background-color: rgb(29, 101, 101);
+
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    /* .info-card-container {
+        height: 48vh;
+        grid-template-columns: 1fr 1fr;
+        display: grid;
+       
+     } */
+     
+}
+
+@media (max-width: 768px) {
+
+    .info-card-container {
+        height: 48vh;
+        grid-template-columns: 1fr 1fr;
+        display: grid;
+       
+     }
+     
+}

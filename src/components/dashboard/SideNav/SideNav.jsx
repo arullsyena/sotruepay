@@ -8,7 +8,7 @@ const SideNav = () => {
   const location = useLocation(); // Get current location
 
   return (
-    <div className='side-nav__container'>
+    <div className='side-nav__wrapper'>
       <ul className='side-nav__menu'>
         {/* <hr className='vertical-line' /> */}
         {navItems.map((item, index) => {
