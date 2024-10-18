@@ -1,0 +1,64 @@
+.ag-theme-quartz,
+.ag-theme-quartz-dark {
+    --ag-foreground-color: rgb(126, 46, 132);
+    --ag-background-color: rgb(255, 255, 255);
+    --ag-header-foreground-color: rgb(204, 245, 172);
+    --ag-header-background-color: rgb(62, 167, 220);
+    --ag-odd-row-background-color: rgba(21, 14, 14, 0.03);
+    --ag-header-column-resize-handle-color: rgb(126, 46, 132);
+
+    --ag-font-size: 17px;
+    --ag-font-family: monospace;
+}
+
+
+/*  */
+/* Add this CSS to your styles file */
+.ag-theme-alpine .ag-header {
+    background-color: #194e14; /* Change header background color */
+    color: white; /* Change header text color */
+  }
+  
+  .light-theme .ag-header {
+    background-color: #f5f5f5; /* Light mode header background */
+    color: rgb(255, 72, 72); /* Light mode header text color */
+  }
+  
+  .dark-theme .ag-header {
+    background-color: #333; /* Dark mode header background */
+    color: white; /* Dark mode header text color */
+  }
+  
+  .light-theme {
+    background-color: white; /* Light mode table background */
+    color: rgb(224, 208, 208); /* Light mode table text color */
+  }
+  
+  .dark-theme {
+    background-color: black; /* Dark mode table background */
+    color: white; /* Dark mode table text color */
+  }
+  
+  .ag-header-cell-text {
+    color: aliceblue;
+    font-size: 1rem;
+  }
+
+  /*  */
+
+  .ag-theme-quartz .ag-header {
+    background-color: var(--ag-background-color);
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+  }
+  
+  .ag-theme-quartz .ag-row-even {
+    background-color: rgb(214, 129, 0);
+  }
+
+  /* 
+   */
+
+   .table-cell {
+    color: #4caf50;
+   }
