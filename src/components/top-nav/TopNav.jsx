@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./TopNav.css";
 import { RxHamburgerMenu, RxCross2 } from "react-icons/rx";
-const TopNav = ({ navItemsList }) => {
+const TopNav = ({ navItemsList, style }) => {
   const [open, setOpen] = useState(false);
   useEffect(() => {
     const closeNavbar = () => {
@@ -15,7 +15,7 @@ const TopNav = ({ navItemsList }) => {
     };
   }, []);
   return (
-    <nav className='top-nav'>
+    <nav className='top-nav' style={style}>
       <a href='#' className='company-name'>
         <svg
           id='logo-37'
@@ -75,8 +75,8 @@ const TopNav = ({ navItemsList }) => {
       </a>
 
       <ul className={`${open ? "top-nav__list active" : "top-nav__list"}`}>
-        {navItemsList.map((navItem) => (
-          <li className={`nav-item ${navItem.className}`}>
+        {navItemsList.map((navItem, index) => (
+          <li key={index} className={`nav-item ${navItem.className}`}>
             <a href='#'>{navItem.displayName}</a>
           </li>
         ))}

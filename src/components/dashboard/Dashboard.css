@@ -1,21 +1,25 @@
 
 .panel-container{
     background-color: aquamarine;
-    height: 98%;
-    width: 95%;
-    margin: 0 2.5% ;
+    height: 85%;
+    width: 96%;
+    margin: 0 2% ;
     box-sizing: border-box;
+    display: flex;
 }
 
 .sidenav-container{
 width: 220px; /* Set a fixed width for the sidebar */
 background-color: #f4f4f4; /* Optional: Sidebar background color */
+height: 100%;
 }
 
 .main-panel {
+    /* padding: 10px; */
+    /* box-sizing: border-box; */
 flex-grow: 1; /* Allow the main content to take the remaining space */
-padding: 20px; /* Optional: Padding for the main content */
 background-color: #fff; /* Optional: Main content background color */
+overflow: scroll;
 }
 
 /* response */
@@ -24,3 +28,5 @@ background-color: #fff; /* Optional: Main content background color */
         display: none;
     }
 }
+
+@media (min-width: 769px) and (max-width: 1024px) {}
