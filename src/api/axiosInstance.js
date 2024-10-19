@@ -3,7 +3,7 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: "https://stp-advance.onrender.com", // Update with your API base URL
+  baseURL: "https://122.171.93.50:3002", // Update with your API base URL
   timeout: 10000, // Request timeout
   //   headers: {
   //     "Content-Type": "application/json",
