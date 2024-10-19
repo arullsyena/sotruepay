@@ -11,6 +11,7 @@ import LoginPage from "./components/login/LoginPage";
 import { AuthProvider } from "./auth/AuthProvider";
 import { useAuth } from "./auth/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
+import { checkAuth } from "./api/auth";
 
 import "react-toastify/dist/ReactToastify.css";
 
@@ -77,7 +78,7 @@ function App() {
         draggable
         pauseOnHover
       />
-      <button onClick={notify}>Show Toast</button>
+      <button onClick={() => checkAuth()}>Show Toast</button>
       <AuthProvider>
         <Routes>
           <Route

@@ -73,3 +73,15 @@ export const register = async (userData) => {
   const response = await axiosInstance.post("/auth/register", userData);
   return response.data;
 };
+
+export const checkAuth = async () => {
+  const response = await axiosInstance.get(
+    "/user/profile",
+    {},
+    {
+      withCredentials: true, // Include this if you are using HTTP-only cookies for authentication
+    }
+  );
+  console.log("testing", response);
+  return response.data;
+};
