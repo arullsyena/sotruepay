@@ -25,8 +25,8 @@ const Testimonials = () => {
   ];
   return (
     <div class='testimonial-innerdiv'>
-      {testimonials.map((testimonial) => (
-        <div class='testimonial-div1 testimonial-eachdiv'>
+      {testimonials.map((testimonial, index) => (
+        <div class='testimonial-div1 testimonial-eachdiv' key={index}>
           <div class='userdetails'>
             <div class='detbox'>
               <p class='detbox--name'>{testimonial.name}</p>
