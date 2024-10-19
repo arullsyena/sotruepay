@@ -9,12 +9,8 @@ export default defineConfig({
   plugins: [react()],
   server: {
     https: {
-      key: fs.readFileSync(
-        path.resolve(__dirname, "sotruepay/nginx/ssl/cert.key")
-      ), // Path to your key file
-      cert: fs.readFileSync(
-        path.resolve(__dirname, "sotruepay/nginx/ssl/cert.pem")
-      ), // Path to your cert file
+      key: fs.readFileSync(path.resolve(__dirname, "certs/key.pem")),
+      cert: fs.readFileSync(path.resolve(__dirname, "certs/cert.pem")),
     },
     port: 3000, // Change this to your desired port, e.g., 3000
   },

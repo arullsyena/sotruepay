@@ -25,10 +25,9 @@ COPY --from=build /app/dist /usr/share/nginx/html
 # Create a directory for SSL certificates
 RUN mkdir -p /etc/nginx/ssl
 
-# Copy the SSL certificate and key
-COPY /nginx/ssl/cert.pem /etc/nginx/ssl/cert.pem
-COPY /nginx/ssl/cert.key /etc/nginx/ssl/cert.key  
-# Ensure you have the key file
+# Copy SSL certificates into the container
+COPY certs/cert.pem /etc/ssl/certs/cert.pem
+COPY certs/key.pem /etc/ssl/private/key.pem
 
 
 # Copy a default nginx config file
