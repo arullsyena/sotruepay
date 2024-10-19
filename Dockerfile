@@ -27,7 +27,8 @@ RUN mkdir -p /etc/nginx/ssl
 
 # Copy the SSL certificate and key
 COPY sotruepay/nginx/ssl/cert.pem /etc/nginx/ssl/cert.pem
-COPY sotruepay/nginx/ssl/cert.key /etc/nginx/ssl/cert.key  # Ensure you have the key file
+COPY sotruepay/nginx/ssl/cert.key /etc/nginx/ssl/cert.key  
+# Ensure you have the key file
 
 
 # Copy a default nginx config file
@@ -36,7 +37,8 @@ COPY nginx/nginx.conf /etc/nginx/conf.d/default.conf
 
 # Expose the port on which Nginx will run
 EXPOSE 7000
-EXPOSE 80  # Optional: keep this if you want to allow HTTP traffic
+EXPOSE 80  
+# Optional: keep this if you want to allow HTTP traffic
 
 # Start Nginx
 CMD ["nginx", "-g", "daemon off;"]
