@@ -48,10 +48,10 @@ function App() {
   const { showNotification } = Notify(); // Use the custom hook
 
   const navItemsList = [
+    { displayName: "Login", link: "ef3rf3", className: "" },
+    { displayName: "About", link: "ef3rf3", className: "" },
+    { displayName: "Services", link: "ef3rf3", className: "" },
     { displayName: "Dashboard", link: "ef3rf3", className: "" },
-    { displayName: "History", link: "ef3rf3", className: "sml-scrn-only" },
-    { displayName: "Payout", link: "ef3rf3", className: "sml-scrn-only" },
-    { displayName: "Dashboard", link: "ef3rf3", className: "sml-scrn-only" },
   ];
   const notify = () => {
     showNotification("This is a warning notification!", { type: "warning" });
@@ -78,7 +78,7 @@ function App() {
         draggable
         pauseOnHover
       />
-      <button onClick={() => checkAuth()}>Show Toast</button>
+      {/* <button onClick={() => checkAuth()}>Show Toast</button> */}
       <AuthProvider>
         <Routes>
           <Route
@@ -86,7 +86,7 @@ function App() {
             element={
               <>
                 <TopNav navItemsList={navItemsList} />
-                <ScrollDown />
+                {/* <ScrollDown /> */}
                 <Home />
               </>
             }

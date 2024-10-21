@@ -22,7 +22,7 @@ const ScrollDown = () => {
     <motion.div
       className='coin-container'
       animate={{
-        x: 1200,
+        // x: 800,
         y: yValue + 400,
         scale: 1,
         rotate: yValue,

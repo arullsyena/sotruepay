@@ -8,13 +8,14 @@
   
   .accordion {
     /* background: linear-gradient(200deg, #ffffff 13.57%, rgb(232, 232, 232) 98.38%); */
-    width: max(50vw, 280px);
+    /* width: max(50vw, 280px); */
     padding: 25px 30px 10px;
-    border: 0.5px solid green;
+    border: 2px solid #05e950;
     border-radius: 15px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    min-height:  15rem !important;
     box-shadow: 0 30px 30px -10px rgba(0, 0, 0, .3);
-    height:7.5rem;
+    /* height:7.5rem; */
     
     &:nth-child(2) {
       background:  linear-gradient(200deg, #ffffff 13.57%, rgb(232, 232, 232) 98.38%);
@@ -36,17 +37,29 @@
   @media (max-width: 480px) {
     .accordion {
       padding: 15px 20px 8px;
+      min-height: 25rem !important;
     }
     .title {
       font-size: 20px;
     }
   }
 
+  @media (max-width: 1200px) {
+    .accordion {
+      padding: 15px 20px 8px;
+      min-height: 25rem !important;
+    }
+    .title {
+      font-size: 20px;
+    }
+  }
+
+
   .accordian-content {
     background-color: white;
-    height: 50rem;
+    /* height: 50rem; */
     width: 100%;
-    padding: 0 0 3rem 0;
+    /* padding: 0 0 3rem 0; */
   }
 
   .accordion .text{
