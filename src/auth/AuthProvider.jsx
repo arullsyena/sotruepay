@@ -1,6 +1,7 @@
 import React, { createContext, useState, useContext, useEffect } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { checkAuth } from "../api/auth";
 
 const AuthContext = createContext();
 
@@ -10,7 +11,7 @@ export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  const checkAuth = async () => {
+  const checkAuths = async () => {
     try {
       console.log("checkauth");
 
@@ -41,21 +42,33 @@ export const AuthProvider = ({ children }) => {
   // Use effect to check if user is authenticated
   useEffect(() => {
     console.log("authhu");
-    // Check if the HTTP-only cookie exists before calling the API
-    const cookieExists = document.cookie
-      .split(";")
-      .some((item) => item.trim().startsWith("your_cookie_name="));
 
-    if (cookieExists) {
-      // Only call the API if the cookie exists
-      console.log("authprovider Checking authentication status...");
-      checkAuth();
-    } else {
-      console.log("authprovider Checking elsee.");
-      // If no cookie, user is not authenticated
-      setIsAuthenticated(false);
-      setLoading(false); // Stop loading if no cookie
-    }
+    // Set loading to true at the start
+    setLoading(true);
+    setIsAuthenticated(false);
+
+    // Define the async function for checking auth
+    const fetchData = async () => {
+      try {
+        const data = await checkAuth();
+        console.log("***** ", data);
+
+        if (data.status === 200) {
+          setIsAuthenticated(true);
+          console.log("***** auth ", "true");
+        }
+      } catch (error) {
+        console.error("Error during authentication check:", error);
+      } finally {
+        // Ensure that loading is set to false after the check
+        setLoading(false);
+      }
+    };
+
+    // Call the async function
+    fetchData();
+
+    // Dependency array is empty, so this runs once when the component mounts
   }, []);
 
   return (

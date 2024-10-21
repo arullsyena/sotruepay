@@ -83,5 +83,5 @@ export const checkAuth = async () => {
     }
   );
   console.log("testing", response);
-  return response.data;
+  return response;
 };
