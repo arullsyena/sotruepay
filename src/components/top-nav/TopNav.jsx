@@ -77,7 +77,7 @@ const TopNav = ({ navItemsList, style }) => {
       <ul className={`${open ? "top-nav__list active" : "top-nav__list"}`}>
         {navItemsList.map((navItem, index) => (
           <li key={index} className={`nav-item ${navItem.className}`}>
-            <a href='#'>{navItem.displayName}</a>
+            <a href={navItem.displayName}>{navItem.displayName}</a>
           </li>
         ))}
         {/* <li>

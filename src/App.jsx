@@ -49,9 +49,9 @@ function App() {
 
   const navItemsList = [
     { displayName: "Login", link: "ef3rf3", className: "" },
-    { displayName: "About", link: "ef3rf3", className: "" },
-    { displayName: "Services", link: "ef3rf3", className: "" },
-    { displayName: "Dashboard", link: "ef3rf3", className: "" },
+    // { displayName: "About", link: "ef3rf3", className: "" },
+    // { displayName: "Services", link: "ef3rf3", className: "" },
+    // { displayName: "Dashboard", link: "ef3rf3", className: "" },
   ];
   const notify = () => {
     showNotification("This is a warning notification!", { type: "warning" });

@@ -54,90 +54,80 @@ export default function LoginPage() {
   };
 
   return (
-    <Container>
-      <Row className='vh-100 login-card d-flex justify-content-center align-items-center'>
-        <Col
-          md={8}
-          lg={6}
-          xs={12}
-          style={{ width: "90%" }}
-          className='d-flex justify-content-center align-items-center'
-        >
-          <Card className='shadow position-relative' style={{ width: "70%" }}>
-            {/* Progress Bar */}
-            {loading && <div className='progress-bar-animation'></div>}
-            <Card.Body className='d-flex'>
-              {/* Left Side - Company Name */}
-              <div className='company-info d-flex flex-column justify-content-center align-items-center p-4 w-50'>
-                <h2 className='fw-bold text-uppercase'>SoTruePay</h2>
-                <p>Your trusted partner in payments.</p>
-              </div>
-
-              {/* Right Side - Login Form */}
-              <div className='login-form w-50 p-4'>
-                <h4 className='text-uppercase mb-3'>Login</h4>
-                <Form className='mb-3' onSubmit={handleLogin}>
-                  {username ? (
-                    <>
-                      <Form.Group
-                        className='mb-3'
-                        controlId='formBasicUserName'
-                      >
-                        <Form.Label>Registered User Name</Form.Label>
-                        <Form.Control
-                          type='text'
-                          placeholder={username}
-                          value={username}
-                          //   onChange={(e) => setUsername(e.target.value)}
-                          disabled
-                        />
-                      </Form.Group>
-
-                      <Form.Group
-                        className='mb-3'
-                        controlId='formBasicPassword'
-                      >
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control
-                          type='password'
-                          placeholder='Enter Password'
-                          value={password}
-                          onChange={(e) => setPassword(e.target.value)}
-                          required
-                        />
-                      </Form.Group>
-                    </>
-                  ) : (
-                    <Form.Group
-                      className='mb-3'
-                      controlId='formBasicPhoneNumber'
-                    >
-                      <Form.Label>Phone Number</Form.Label>
+    <Container fluid>
+    <Row className='vh-100 login-card d-flex justify-content-center align-items-center'>
+      <Col
+        md={8}
+        lg={6}
+        xs={12}
+        className='d-flex justify-content-center align-items-center p-3'
+      >
+        <Card className='shadow w-100' style={{ width :"100%" , minHeight : "30rem" }}>
+          {/* Progress Bar */}
+          {loading && <div className='progress-bar-animation'></div>}
+          <Card.Body className='d-flex flex-column flex-md-row'>
+            {/* Left Side - Company Name */}
+            <div className='company-info d-flex flex-column justify-content-center align-items-center p-4 w-100 w-md-50'>
+              <h2 className='fw-bold text-uppercase text-center login-page-title'>SoTruePay</h2>
+              <p className='text-center'>Your trusted partner in payments.</p>
+            </div>
+  
+            {/* Right Side - Login Form */}
+            <div className='login-form d-flex flex-column justify-content-center  p-4 w-100 w-md-50'>
+              <h4 className='text-uppercase mb-3 text-center login-page-title' >Login</h4>
+              <Form className='mb-3' onSubmit={handleLogin}>
+                {username ? (
+                  <>
+                    <Form.Group className='mb-3' controlId='formBasicUserName'>
+                      <Form.Label>Registered User Name</Form.Label>
                       <Form.Control
                         type='text'
-                        placeholder='Enter Phone Number'
-                        value={phoneNumber}
-                        onChange={(e) => setPhoneNumber(e.target.value)}
+                        placeholder={username}
+                        value={username}
+                        disabled
+                      />
+                    </Form.Group>
+  
+                    <Form.Group className='mb-3' controlId='formBasicPassword'>
+                      <Form.Label>Password</Form.Label>
+                      <Form.Control
+                        type='password'
+                        placeholder='Enter Password'
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
                         required
                       />
                     </Form.Group>
-                  )}
-
-                  <div className='d-grid'>
-                    <Button
-                      className='submit-btn'
-                      type='submit'
-                      disabled={loading}
-                    >
-                      {loading ? "Loading..." : "Login"}
-                    </Button>
-                  </div>
-                </Form>
-              </div>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-    </Container>
+                  </>
+                ) : (
+                  <Form.Group className='mb-3' controlId='formBasicPhoneNumber'>
+                    <Form.Label>Phone Number</Form.Label>
+                    <Form.Control
+                      type='text'
+                      placeholder='Enter Phone Number'
+                      value={phoneNumber}
+                      onChange={(e) => setPhoneNumber(e.target.value)}
+                      required
+                    />
+                  </Form.Group>
+                )}
+  
+                <div className='d-grid'>
+                  <Button
+                    className='btn'
+                    type='submit'
+                    disabled={loading}
+                  >
+                    {loading ? "Loading..." : "Login"}
+                  </Button>
+                </div>
+              </Form>
+            </div>
+          </Card.Body>
+        </Card>
+      </Col>
+    </Row>
+  </Container>
+  
   );
 }
