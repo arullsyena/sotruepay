@@ -3,7 +3,7 @@
 import axiosInstance from "./axiosInstance";
 
 export const login = async ({ phoneNumber, username, password }) => {
-  console.log("ppppe", phoneNumber);
+  console.log("ppppfse", phoneNumber);
 
   try {
     let api = "/user/login";
