@@ -7,11 +7,4 @@ import path from "path";
 export default defineConfig({
   base: "/",
   plugins: [react()],
-  server: {
-    https: {
-      key: fs.readFileSync(path.resolve(__dirname, "certs/key.pem")),
-      cert: fs.readFileSync(path.resolve(__dirname, "certs/cert.pem")),
-    },
-    port: 3000, // Change this to your desired port, e.g., 3000
-  },
 });
