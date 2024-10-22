@@ -1,34 +1,41 @@
-.border-clr , .submit-btn{
-    border-color: #05e950 !important;
-    background-color: #05e950 !important;
-}
-/* Progress bar container */
+/* Progress bar animation */
 .progress-bar-animation {
     position: absolute;
     top: 0;
     left: 0;
-    height: 1%;
-    width: 16%; /* Short line width */
-    background-color: #17a2b8; /* Color of the moving line */
-    /* animation: slide 1.5s infinite cubic-bezier(0.25, 1.5, 0.5, 1); */
-    animation: slide 0.7s infinite linear;
-    padding-right: 10px;
-
-
-    border-radius: 10px; /* Rounded corners for a smoother look */
+    height: 3px;
+    width: 20%;
+    background-color: #17a2b8;
+    animation: slide 1s infinite ease-in-out;
+    border-radius: 2px;
   }
   
-  /* Keyframes for sliding effect */
   @keyframes slide {
     0% {
       left: 0;
     }
     50% {
-      left: 50%; /* Move to the right but stay within the card */
+      left: 50%;
+      opacity: 50%;
     }
     100% {
-      left:85%;
-      opacity: 0; /* Fade out as it reaches the end */
+      left: 90%;
+      opacity: 0;
     }
   }
   
+  /* Styling for company info section */
+  .company-info {
+    background-color: #f8f9fa; /* Light background for contrast */
+    text-align: center;
+  }
+  
+  .login-form {
+    background-color: #ffffff; /* Keep the form section white */
+  }
+  
+
+  .login-card {
+    width: 100%;
+    padding: 0;
+  }

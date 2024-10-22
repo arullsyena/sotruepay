@@ -37,26 +37,32 @@ const Accordian = () => {
 
   return (
     <motion.div
-      className='card-container'
+      className='row'
       initial='offscreen'
       whileInView='onscreen'
       viewport={{ once: true, amount: 0.8 }}
     >
-      <div className='accordian-content'>
-        <div className='accordions'>
+      {/* <div className='accordian-content'>
+        <div className='accordions'> */}
+        
           {accordionData.map((item, index) => (
-            <motion.div key={index} variants={cardVariants}>
+            
+            // <motion.div key={index} variants={cardVariants}>
+              <div class="col-lg-6 col-md-6 col-sm-12">
               <div className='accordion'>
                 <div className='section--title accordion--title'>
                   {item.title}
                 </div>
                 <div className='text'>{item.text}</div>
               </div>
-            </motion.div>
+              </div>
+              
+            // </motion.div>
+           
           ))}
-        </div>
-        <div className='spacer'></div>
-      </div>
+        {/* </div> */}
+        {/* <div className='spacer'></div> */}
+      {/* </div> */}
     </motion.div>
   );
 };

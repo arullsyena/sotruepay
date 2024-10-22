@@ -45,11 +45,10 @@ const Dashboard = () => {
           <SideNav />
         </div>
         <Wrapper className='main-panel'>
-          <DashboardPanel />
+          {/* <DashboardPanel /> */}
           <Routes>
-            {" "}
             {/* Use Routes instead of Switch */}
-            {/* <Route path='/dashboard' element={<DashboardOverview />} />{" "} */}
+            <Route path='dd' element={<DashboardPanel />} />
             {/* Use element prop */}
             {/* <Route
               path='/dashboard/dashboard'

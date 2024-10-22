@@ -24,9 +24,13 @@ const Testimonials = () => {
     },
   ];
   return (
-    <div class='testimonial-innerdiv'>
-      {testimonials.map((testimonial) => (
-        <div class='testimonial-div1 testimonial-eachdiv'>
+  <section className='home-page__section home-page__sections '>
+    <h2 className='section--title'>Testimonial</h2>
+    <hr width='100%' color='#05e950' />
+    {/* <div className='spacer'></div> */}
+     <div class='testimonial-innerdiv'>
+      {testimonials.map((testimonial, index) => (
+        <div class='testimonial-div1 testimonial-eachdiv' key={index}>
           <div class='userdetails'>
             <div class='detbox'>
               <p class='detbox--name'>{testimonial.name}</p>
@@ -39,6 +43,7 @@ const Testimonials = () => {
         </div>
       ))}
     </div>
+    </section>
   );
 };
 

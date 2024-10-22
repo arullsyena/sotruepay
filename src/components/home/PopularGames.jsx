@@ -27,9 +27,9 @@ const PopularGames = () => {
     },
   ];
   return (
-    <section className='home-page__section home-page__section--service'>
+    <section className='home-page__section home-page__sections'>
       <h2 className='section--title'>Popular Games</h2>
-      <hr width='50%' color='#05e950' />
+      <hr width='100%' color='#05e950' />
       <div className='spacer'></div>
 
       <div className='gcards-container'>
