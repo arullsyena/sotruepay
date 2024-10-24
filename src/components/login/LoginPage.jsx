@@ -62,7 +62,7 @@ export default function LoginPage() {
         xs={12}
         className='d-flex justify-content-center align-items-center p-3'
       >
-        <Card className='shadow w-100' style={{ width :"100%" , minHeight : "30rem" }}>
+        <Card className='shadow w-100' style={{ width :"100%" , minHeight : "30rem" ,borderRadius: "2rem"}}>
           {/* Progress Bar */}
           {loading && <div className='progress-bar-animation'></div>}
           <Card.Body className='d-flex flex-column flex-md-row'>
@@ -112,7 +112,7 @@ export default function LoginPage() {
                   </Form.Group>
                 )}
   
-                <div className='d-grid'>
+                <div className='d-grid' style={{justifyContent: "center"}}>
                   <Button
                     className='btn'
                     type='submit'
