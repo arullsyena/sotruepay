@@ -1,4 +1,5 @@
 import "./Home.css";
+import "bootstrap/dist/css/bootstrap-grid.min.css";
 import rn2 from "../../assets/rn2.png";
 import { useRef } from "react";
 import Testimonials from "../Testimonials/Testimonials";
@@ -13,25 +14,25 @@ const Home = () => {
   return (
     <div className='container'>
       
-      <main className='home-page__content'>
-      <ScrollDown />
-        <section className='home-page__section home-page__section--intro'>
-          <div className='welcome-section'>
-            <div className='welcome-title col-lg-8 col-md-8 col-sm-8'>
-              <p className='home-page__text '>
-                <span className='line-1 animate-charcter2'>Welcome To</span>
-                <span className='line-2 animate-charcter1'>So-True Pay</span>
+      <main>
+        <ScrollDown />
+        <div className='welcomDiv container'>
+          <div className='welcome-section row'>
+            <div className='welcome-img floating col-md-4 col-sm-12 order-1 order-md-1'>
+              <img src={rn2} className='rupee-note item' alt='Rupees Image' />
+            </div>
+
+            <div className='welcome-title col-md-8 col-sm-12 order-2 order-md-2'>
+              <p className='home-page__text'>
+                <h5 className='line-1 animate-charcter2'>Welcome To</h5>
+                <h5 className='line-2 animate-charcter1'>So-True Pay</h5>
               </p>
               <p className='subheading'>
                 Play Chess, Rummy, and Ludo with exciting skins and win rewards!
               </p>
             </div>
-
-            <div className='welcome-img floating col-lg-4 col-md-4 col-sm-4'>
-              <img src={rn2} className='rupee-note item ' alt='Rupees Image' />
-            </div>
           </div>
-        </section>
+        </div>
         <PopularGames />
         <WhyChooseUs />
         <RobustSecurity />

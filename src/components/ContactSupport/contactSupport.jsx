@@ -1,4 +1,5 @@
 // import { ContactSupport } from "@mui/icons-material";
+import "bootstrap/dist/css/bootstrap-grid.min.css";
 import "./contactSupport.css";
 const ContactSupport = () => {
   const testimonials = [
@@ -29,79 +30,79 @@ const ContactSupport = () => {
   <h2 className='section--title'>Contact</h2>
   <hr width='100%' color='#05e950' />
   <div className='container'>
-    <div className='spacer'>
-      <div className='col-lg-12 col-md-12 col-sm-12'>
+      <div className='spacer'>
         <div className='contact-card'>
-          <div className='row'>
-            {/* Left side: Office address and contact details */}
-            <div className='col-lg-5 col-md-5 col-sm-12' id='contactDetails'>
-        <div className='contact-details'>
-            <div className='contact-item'>
-            <i className='fas fa-map-marker-alt'></i>
-            <div>
-                <h3>Address</h3>
-                <p>HYDERABAD</p>
-            </div>
-            </div>
-            
-            <div className='contact-item'>
-            <i className='fas fa-phone-alt'></i>
-            <div>
-                <h3>Call for Query</h3>
-                <p>+91 9885666219</p>
-            </div>
+            <div class="row">
+              <div class="col-md-6 col-sm-12 contactCard1">
+                  <div class="card">
+                      <div class="card-body">
+                        <h5 class="section--title">Query</h5><br/>
+                          <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label contactHeader">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"  />
+                          </div>
+                          <div class="mb-3">
+                            <textarea className='form-control' placeholder='Your Message' rows='4' required></textarea>
+                          </div>
+  
+                          <button  class="btn btn-primary">Submit</button>
+
+                      </div>
+                  </div>
+              </div><br/>
+              <div class="col-md-6 col-sm-12">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="section--title">Get in Touch</h5><br/>
+
+                        <div className="table-responsive">
+  <table className="table">
+    <tbody>
+      <tr>
+        <td className="text-start">
+          <p className="contactHeader">Address</p>
+        </td>
+        <td className="text-start">
+          <p className="contactVal">Hyderabad</p>
+        </td>
+      </tr>
+      <tr>
+        <td className="text-start">
+          <p className="contactHeader">Call for Query</p>
+        </td>
+        <td className="text-start">
+          <p className="contactVal">+91 9885666219</p>
+        </td>
+      </tr>
+      <tr>
+        <td className="text-start">
+          <p className="contactHeader">Mail</p>
+        </td>
+        <td className="text-start">
+          <p className="contactVal">support@sotruepay.in</p>
+        </td>
+      </tr>
+      <tr>
+        <td className="text-start">
+          <p className="contactHeader">Opening Hours</p>
+        </td>
+        <td className="text-start">
+          <p className="contactVal">24/7</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+                          
+                      </div>
+                  </div>
+              </div>
+
             </div>
 
-            <div className='contact-item'>
-            <i className='fas fa-envelope'></i>
-            <div>
-                <h3>Send Us Message</h3>
-                <p>support@sotruepay.in</p>
-            </div>
-            </div>
-
-            <div className='contact-item'>
-            <i className='fas fa-clock'></i>
-            <div>
-                <h3>Opening Hours</h3>
-                <p>24/7</p>
-            </div>
-            </div>
         </div>
-        </div>
-
-
-            {/* Right side: Contact form */}
-            <div className='col-lg-7 col-md-7 col-sm-12'>
-                <h2 className="section--title accordion--title">CONTACT</h2>
-                <p>Send your query</p> 
-              <form className='contact-form'>
-                <div className='form-group'>
-                  {/* <label htmlFor='name'>Name</label> */}
-                  <input type='text' id='name' className='form-control' placeholder='Enter your name' />
-                </div>
-
-                <div className='form-group'>
-                  {/* <label htmlFor='phone'>Phone Number</label> */}
-                  <input type='tel' id='phone' className='form-control' placeholder='Enter your phone number' />
-                </div>
-
-                <div className='form-group'>
-                  {/* <label htmlFor='email'>Email</label> */}
-                  <input type='email' id='email' className='form-control' placeholder='Enter your email' />
-                </div>
-
-                <div className='form-group'>
-                  {/* <label htmlFor='comment'>Comment</label> */}
-                  <textarea id='comment' className='form-control' placeholder='Your message'></textarea>
-                </div>
-
-                <button type='submit' className='btn btn-primary'>Submit</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </section>

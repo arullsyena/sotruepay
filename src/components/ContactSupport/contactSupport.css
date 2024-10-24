@@ -85,3 +85,9 @@
     /* background-color: rgb(214, 209, 209) !important; */
   }
   
+  .contactHeader{
+    font-weight: 700;
+  }
+  .contactCard1{
+    margin-bottom: 1rem;
+  }

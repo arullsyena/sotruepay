@@ -1,7 +1,11 @@
 .home-page {
     /* padding: 0 2.5rem; */
 }
-.home-page__section--intro {
+
+.order-2 {
+  margin-top: 40px !important;
+}
+.welcomDiv {
     /* height: 65vh; */
     width: 100%;
    background-color: white;
@@ -14,16 +18,13 @@
     flex-direction: column;
     /* width: 65%; */
 }
+
 .welcome-section {
-    background-color: rgb(255, 255, 255);
-    /* height: 58vh; */
-    width: 100%;
-    box-sizing: border-box;
-    padding: 2rem 2rem;
-    display: flex;
-    flex-direction: row;
-    box-shadow: #05e950 0px 5px 50px -10px, #05e950 0px 5px 5px -10px, #05e950 0px -2px 6px 0px inset;
-    /* grid-template-columns: 6fr 4fr; */
+  padding: 2rem 2rem;
+  display: flex;
+  /* flex-direction: row; */
+  box-shadow: #05e950 0px 5px 50px -10px, #05e950 0px 5px 5px -10px, #05e950 0px -2px 6px 0px inset;
+  /* grid-template-columns: 6fr 4fr; */
 }
 
 
@@ -50,13 +51,8 @@
 }
 
 .home-page__text {
-    height: 70%;
-    /* width: 40%; */
-    margin: 0;
     display: flex;
-    justify-content: flex-start;
     flex-direction: column;
-    /* background-color: #000000; */
 }
 
 .floating {  
@@ -64,8 +60,6 @@
     animation-duration: 2.5s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
-    margin-left: 30px;
-    margin-top: 5px;
 }
 
 @keyframes floating {
@@ -118,7 +112,6 @@
   -webkit-text-fill-color: transparent;
   /* animation: textclip 1.5s linear ; */
   /* display: inline-block; */
-      font-size: 4rem;
       font-weight: 700;
 }
 
@@ -180,7 +173,7 @@
   
 
   .section--title {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     color: green;
     font-weight: 700;
   }
@@ -231,7 +224,11 @@
     margin-bottom: 2rem;
     background: linear-gradient(0deg, rgba(5, 233, 80, 1) 0%, rgba(153, 246, 183, 1) 0%, rgba(255, 255, 255, 1) 100%);
 }
-  
+.info-card .css-uks7c6-MuiSvgIcon-root {
+  width: 2em;
+  height: 2em;
+  color: #198754 !important;
+} 
   
 
   p , h5, h2{

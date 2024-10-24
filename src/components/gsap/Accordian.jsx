@@ -53,6 +53,7 @@ const Accordian = () => {
                 <div className='section--title accordion--title'>
                   {item.title}
                 </div>
+                <br />
                 <div className='text'>{item.text}</div>
               </div>
               </div>

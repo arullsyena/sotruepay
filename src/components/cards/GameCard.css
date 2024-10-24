@@ -86,7 +86,7 @@
   
   .character {
     width: 20vw;
-    height: 60vh;
+    height: 40vh;
     opacity: 0;
     transition: all 0.5s;
     position: absolute;
@@ -95,7 +95,7 @@
   
   .game-card:hover .character {
     opacity: 1;
-    transform: translate3d(0%, -30%, 100px);
+    transform: translate3d(0%, -30%, 0px);
   }
 
   .card-wrapper {
