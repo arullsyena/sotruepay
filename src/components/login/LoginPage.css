@@ -28,10 +28,12 @@
   .company-info {
     background-color: #bcf9ff; /* Light background for contrast */
     text-align: center;
+    border-radius: 2rem;
   }
   
   .login-form {
-    background-color: #ffffff; /* Keep the form section white */
+    background-color: #ffffff;
+    text-align: left; 
   }
   
 
@@ -59,4 +61,8 @@
   }
   .btn:hover {
     background-color: #04c548;
+  }
+  .form-label{
+    font-weight: bold;
+    color: green;
   }
