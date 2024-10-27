@@ -220,9 +220,7 @@ function PayoutPanel() {
   return (
     <div className='payout-container'>
       {/*  */}
-      <a class='btn' href='#' onClick={handleOpen}>
-        ere
-      </a>
+
       {open && (
         <div id='open-modal' class='modal-window'>
           <div>
@@ -255,60 +253,14 @@ function PayoutPanel() {
         </div>
       )}
       {/*  */}
+
       <div className='pc-1'>
-        <div className='fund-transfer-form'>
-          {/* <h2>Transfer Funds</h2> */}
-          <ComponentTitle title={"Transfer Funds"}></ComponentTitle>
-          <Form>
-            <Form.Group
-              className='mb-3'
-              controlId='exampleForm.ControlTextarea1'
-            >
-              <Form.Label>Name</Form.Label>
-              <Form.Control type='textarea' placeholder='Enter Name' />
-            </Form.Group>
-            <Form.Group
-              className='mb-3'
-              controlId='exampleForm.ControlTextarea2'
-            >
-              <Form.Label>Account Number</Form.Label>
-              <Form.Control
-                type='textarea'
-                placeholder='Enter Account Number'
-              />
-            </Form.Group>
-            <Form.Group
-              className='mb-3'
-              controlId='exampleForm.ControlTextarea3'
-            >
-              <Form.Label>IFSC Code</Form.Label>
-              <Form.Control type='textarea' placeholder='Enter IFSC Code' />
-            </Form.Group>
-            <Form.Group
-              className='mb-3'
-              controlId='exampleForm.ControlTextarea4'
-            >
-              <Form.Label>Amount</Form.Label>
-              <Form.Control type='textarea' placeholder='Enter Amount' />
-            </Form.Group>
-            <Form.Group
-              className='mb-3'
-              controlId='exampleForm.ControlTextarea5'
-            >
-              <Form.Label>Phone Number</Form.Label>
-              <Form.Control type='textarea' placeholder='Enter Phone Number' />
-            </Form.Group>
-            <Button className='green-btn' variant='primary' type='submit'>
-              Submit
-            </Button>
-          </Form>
-        </div>
         <div className='pc-cards'>
           <InfoCard
             key={"index1"}
             value={"90"}
             text={"Last-5 Transactions"}
-            bgColor={"white"}
+            bgColor={"#ff000085"}
             loadPos={"card.loadPos"}
             icon={Filter5Icon}
             style={{ height: "20vh", width: { xs: "90%" } }}
@@ -319,7 +271,7 @@ function PayoutPanel() {
             key={"index1"}
             value={"233"}
             text={"Wallet"}
-            bgColor={"white"}
+            bgColor={"blue"}
             loadPos={"card.loadPos"}
             icon={AccountBalanceWalletIcon}
             style={{ height: "20vh", width: { xs: "90%" } }}
@@ -327,9 +279,78 @@ function PayoutPanel() {
             subtext1={"Present Wallet Amount"}
           />
         </div>
-      </div>
-      <div className='table-container'>
-        <Table columnDefs={columnDefs} rows={makeData()} />
+        <div className='spacer'></div>
+        <div className='payout-panel-forms'>
+          <div className='fund-transfer-form-container'>
+            <ComponentTitle title={"Transfer Funds"}></ComponentTitle>
+            <div className='fund-transfer-form glass_bg'>
+              {/* <h2>Transfer Funds</h2> */}
+
+              <div className='spacer'></div>
+              <Form>
+                <div className='parallel-field-not'>
+                  <Form.Group
+                    className='mb-3 form-f'
+                    controlId='exampleForm.ControlTextarea1'
+                  >
+                    <Form.Label>Name</Form.Label>
+                    <Form.Control type='textarea' placeholder='Enter Name' />
+                  </Form.Group>
+                  <Form.Group
+                    className='mb-3 form-f'
+                    controlId='exampleForm.ControlTextarea2'
+                  >
+                    <Form.Label>Account Number</Form.Label>
+                    <Form.Control
+                      type='textarea'
+                      placeholder='Enter Account Number'
+                    />
+                  </Form.Group>
+                </div>
+                <div className='parallel-field-not'>
+                  <Form.Group
+                    className='mb-3 form-f'
+                    controlId='exampleForm.ControlTextarea3'
+                  >
+                    <Form.Label>IFSC Code</Form.Label>
+                    <Form.Control
+                      type='textarea'
+                      placeholder='Enter IFSC Code'
+                    />
+                  </Form.Group>
+                  <Form.Group
+                    className='mb-3 form-f'
+                    controlId='exampleForm.ControlTextarea5'
+                  >
+                    <Form.Label>Phone Number</Form.Label>
+                    <Form.Control
+                      type='textarea'
+                      placeholder='Enter Phone Number'
+                    />
+                  </Form.Group>
+                </div>
+                <div className='parallel-field-not'>
+                  <Form.Group
+                    className='mb-3 form-f'
+                    controlId='exampleForm.ControlTextarea4'
+                  >
+                    <Form.Label>Amount</Form.Label>
+                    <Form.Control type='textarea' placeholder='Enter Amount' />
+                  </Form.Group>
+                </div>
+                <div className='spacer'></div>
+                <Button className='green-btn' variant='primary' type='submit'>
+                  Submit
+                </Button>
+                {/* <div className='spacer'></div> */}
+              </Form>
+            </div>
+          </div>
+          <div className='table-container'>
+            <ComponentTitle title={"Transfer Details"}></ComponentTitle>
+            <Table columnDefs={columnDefs} rows={makeData()} />
+          </div>
+        </div>
       </div>
     </div>
   );

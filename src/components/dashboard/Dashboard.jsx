@@ -10,6 +10,7 @@ import DashboardPanel from "./dashboardPanel/DashboardPanel";
 import HistoryPanel from "./historyPanel/HistoryPanel";
 import PayoutPanel from "./payoutPanel/payoutPanel";
 import PanelTitle from "./panelTitle/PanelTitle";
+import ModalComponent from "../modal/ModalComponent";
 // import DashboardOverview from "./DashboardOverview"; // Example component
 // import DashboardSettings from "./DashboardSettings"; // Example component
 
@@ -18,6 +19,11 @@ const Wrapper = styled.div``;
 // background-color: ${({ theme }) => theme.background};
 //   color: ${({ theme }) => theme.text};
 const Dashboard = () => {
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const openModal = () => setModalOpen(true);
+  const closeModal = () => setModalOpen(false);
+
   const [theme, setTheme] = useState(lightTheme);
 
   const toggleTheme = () => {
@@ -28,9 +34,9 @@ const Dashboard = () => {
 
   const navItemsList = [
     { displayName: "Dashboard", link: "ef3rf3", className: "" },
-    { displayName: "History", link: "ef3rf3", className: "sml-scrn-only" },
-    { displayName: "Payout", link: "ef3rf3", className: "sml-scrn-only" },
-    { displayName: "Dashboard", link: "ef3rf3", className: "sml-scrn-only" },
+    { displayName: "History", link: "ef3rf3", className: "" },
+    { displayName: "Payout", link: "ef3rf3", className: "" },
+    { displayName: "Logout", link: "ef3rf3", className: "" },
   ];
 
   return (
@@ -43,13 +49,20 @@ const Dashboard = () => {
           width: "auto",
         }}
       />
+      <button onClick={openModal}>Open Modal</button>
+
+      <ModalComponent isOpen={isModalOpen} onClose={closeModal}>
+        {/* <h2>Modal Title</h2>
+        <p>This is the content inside the modal. You can put anything here.</p> */}
+        <button onClick={closeModal}>Close</button>
+      </ModalComponent>
       <div className='panel-container'>
-        <div className='sidenav-container'>
+        {/* <div className='sidenav-container'>
           <SideNav />
-        </div>
+        </div> */}
         <Wrapper className='main-panel'>
           {/* <DashboardPanel /> */}
-          <PanelTitle />
+          <PanelTitle title={"Dashboard"} />
           <Routes>
             {/* Use Routes instead of Switch */}
             <Route path='dd' element={<DashboardPanel />} />

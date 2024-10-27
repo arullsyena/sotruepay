@@ -16,6 +16,7 @@ import { checkAuth } from "./api/auth";
 import "react-toastify/dist/ReactToastify.css";
 
 import Notify from "./components/notification/Notify";
+// import ModalComponent from "./components/modal/ModalComponent";
 
 // const { isAuthenticated } = useAuth();
 let hasNotified = false;
@@ -46,7 +47,9 @@ function PrivateRoute({ children }) {
 
 function App() {
   const { showNotification } = Notify(); // Use the custom hook
+  //
 
+  //
   const navItemsList = [
     { displayName: "Login", link: "ef3rf3", className: "" },
     { displayName: "About", link: "ef3rf3", className: "" },

@@ -1,6 +1,6 @@
 
 .panel-container{
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
     height: 85%;
     width: 96%;
     margin: 0 2% ;
@@ -10,7 +10,7 @@
 
 .sidenav-container{
 width: 220px; /* Set a fixed width for the sidebar */
-background-color: white;
+/* background-color: white; */
 height: 100%;
 }
 
@@ -18,7 +18,7 @@ height: 100%;
     /* padding: 10px; */
     /* box-sizing: border-box; */
 flex-grow: 1; /* Allow the main content to take the remaining space */
-background-color: #fff; /* Optional: Main content background color */
+/* background-color: #fff;  */
 overflow: scroll;
 }
 

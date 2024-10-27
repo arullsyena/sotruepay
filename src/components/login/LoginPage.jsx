@@ -112,7 +112,7 @@ export default function LoginPage() {
                       className='mb-3'
                       controlId='formBasicPhoneNumber'
                     >
-                      <Form.Label>Phone Number</Form.Label>
+                      {/* <Form.Label>Phone Number</Form.Label> */}
                       <Form.Control
                         type='text'
                         placeholder='Enter Phone Number'

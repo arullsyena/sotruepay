@@ -1,0 +1,121 @@
+.side-panel-container {
+    position: relative;
+    z-index: 10000 !important;
+  }
+  
+  .toggle-button {
+    margin: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  #tggg {
+    z-index: 10000 !important;
+  }
+  .side-panel-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    /* z-index: 9999; */
+    transition: opacity 0.3s ease-in-out;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 10000 !important;
+  }
+  
+  .side-panel-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  .side-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 300px;
+    background-color: #ffffff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 10000 !important;
+    padding: 20px;
+  }
+  
+  .side-panel.open {
+    transform: translateX(0);
+  }
+  
+  .panel-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .theme-form {
+    text-align: center;
+  }
+  
+  .theme-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .theme-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ddd;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .theme-button.active {
+    background-color: #3498db;
+    color: white;
+  }
+  
+  .color-options {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .color-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    border: 2px solid transparent;
+  }
+  
+  .color-circle.selected {
+    border: 2px solid #000;
+    transform: scale(1.1);
+  }
+  
+  .color-circle:hover {
+    transform: scale(1.1);
+  }
+  
+  .close-button {
+    padding: 10px;
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .close-button:hover {
+    background-color: #c0392b;
+  }
+  

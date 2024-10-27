@@ -2,15 +2,24 @@
     height: 95%;
     width: 190px;
     margin: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and box-shadow */
-    
+    position: relative;
+    overflow: hidden;
+    z-index: 1 !important;
+    /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
+     /* Smooth transition for transform and box-shadow */
+    /* border: 1px solid black; */
+
+    /* From https://css.glass */
+
     /* box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgb(5, 233, 80) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; */
     
-    box-shadow: rgb(199, 228, 209) 0px 30px 30px -20px, rgb(5, 233, 80) 0px 30px 60px -30px, rgb(5, 233, 80) 0px -2px 6px 0px inset;
+    /* box-shadow: rgb(199, 228, 209) 0px 30px 30px -20px, rgb(5, 233, 80) 0px 30px 60px -30px, rgb(5, 233, 80) 0px -2px 6px 0px inset; */
     /* box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; */
     /* box-shadow: rgba(184, 180, 180, 0.4) 0px 5px, rgba(162, 162, 162, 0.3) 0px 10px; */
     /* box-shadow: rgba(0, 0, 0, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(0, 0, 0, 0.35) 0px -2px 6px 0px inset; */
 }
+
+
 
 .card--right {
     display: flex;
@@ -18,11 +27,10 @@
     justify-content: center;
 }
 
-.dashboard__card:hover{
+/* .dashboard__card:hover{
     box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
-    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset; */
     
-}
+} */
 
 .card-content{
     /* display: flex;
@@ -32,6 +40,7 @@
     grid-gap: 0 !important;
     box-sizing: border-box;
     padding: 5% !important;
+    overflow: hidden;
 }
 
 .counter-value h2 {
@@ -65,7 +74,7 @@
 }
 
 .info-fcard-wrapper {
-    background-color: white;
+    /* background-color: white; */
     height:30vh;
     /* width: inherit; */
     /* height: inherit; */
@@ -77,11 +86,10 @@
     margin: "0 auto";
 }
 
-.dashboard__card:hover {
-    transform: translateY(-10px); /* Float up on hover */
+/* .dashboard__card:hover {
+    transform: translateY(-10px); 
     box-shadow: rgba(5, 233, 80) 0px -23px 25px 0px inset, rgba(5, 233, 80)0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-    /* box-shadow:  rgb(5, 233, 80, 0.4) 0px 5px, rgb(5, 233, 80, 0.3)  0px 10px, rgba(0, 252, 4, 0.2) 0px 15px, rgba(2, 124, 43, 0.1)  0px 20px, rgb(5, 233, 80, 0.05)  0px 25px; */
-}
+} */
   .circle {
     border: 5px solid black  ;
     height: 3rem;
@@ -124,3 +132,147 @@
     color: rgb(108, 106, 106) !important;
 }
 
+
+
+/* 
+ */
+
+
+
+  .ag-courses_box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  
+    padding: 50px 0;
+  }
+  .ag-courses_item {
+    -ms-flex-preferred-size: calc(33.33333% - 30px);
+    flex-basis: calc(33.33333% - 30px);
+  
+    margin: 0 15px 30px;
+  
+    overflow: hidden;
+  
+    border-radius: 28px;
+  }
+  .ag-courses-item_link {
+    display: block;
+    padding: 30px 20px;
+    background-color: #121212;
+  
+    overflow: hidden;
+  
+    position: relative;
+  }
+  .ag-courses-item_link:hover,
+  .ag-courses-item_link:hover .ag-courses-item_date {
+    text-decoration: none;
+    color: #FFF;
+  }
+  .ag-courses-item_link:hover .ag-courses-item_bg {
+    -webkit-transform: scale(10);
+    -ms-transform: scale(10);
+    transform: scale(10);
+  }
+  .ag-courses-item_title {
+    min-height: 87px;
+    margin: 0 0 25px;
+  
+    overflow: hidden;
+  
+    font-weight: bold;
+    font-size: 30px;
+    color: #FFF;
+  
+    z-index: 2;
+    position: relative;
+  }
+  .ag-courses-item_date-box {
+    font-size: 18px;
+    color: #FFF;
+  
+    z-index: 2;
+    position: relative;
+  }
+  .ag-courses-item_date {
+    font-weight: bold;
+   
+  
+    -webkit-transition: color .5s ease;
+    -o-transition: color .5s ease;
+    transition: color .5s ease
+  }
+  .ag-courses-item_bg {
+    height: 128px;
+    width: 128px;
+    /* background-color: #41f934; */
+  
+    z-index: 1;
+    position: absolute;
+    top: -75px;
+    right: -75px;
+  
+    border-radius: 50%;
+  
+    -webkit-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+  }
+  .ag-courses_item:nth-child(2n) .ag-courses-item_bg {
+    background-color: #3ecd5e;
+  }
+  .ag-courses_item:nth-child(3n) .ag-courses-item_bg {
+    background-color: #e44002;
+  }
+  .ag-courses_item:nth-child(4n) .ag-courses-item_bg {
+    background-color: #952aff;
+  }
+  .ag-courses_item:nth-child(5n) .ag-courses-item_bg {
+    background-color: #cd3e94;
+  }
+  .ag-courses_item:nth-child(6n) .ag-courses-item_bg {
+    background-color: #4c49ea;
+  }
+  
+  
+  
+  @media only screen and (max-width: 979px) {
+    .ag-courses_item {
+      -ms-flex-preferred-size: calc(50% - 30px);
+      flex-basis: calc(50% - 30px);
+    }
+    .ag-courses-item_title {
+      font-size: 24px;
+    }
+  }
+  
+  @media only screen and (max-width: 767px) {
+    .ag-format-container {
+      width: 96%;
+    }
+  
+  }
+  @media only screen and (max-width: 639px) {
+    .ag-courses_item {
+      -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+    }
+    .ag-courses-item_title {
+      min-height: 72px;
+      line-height: 1;
+  
+      font-size: 24px;
+    }
+    .ag-courses-item_link {
+      padding: 22px 40px;
+    }
+    .ag-courses-item_date-box {
+      font-size: 16px;
+    }
+  }

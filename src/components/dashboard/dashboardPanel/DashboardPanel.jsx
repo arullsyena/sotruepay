@@ -18,34 +18,35 @@ import React from "react";
 // import "./styles.css";
 import IconButton from "@mui/material/IconButton";
 import ReceiptLongIcon from "@mui/icons-material/ReceiptLong";
+import ThemePanel from "../../themePanel/ThemePanel";
 
 const DashboardPanel = () => {
   const cardData = [
     {
       value: 450,
       text: `Wallet's money`,
-      bgColor: "white",
+      bgColor: "#ff000085",
       loadPos: 0,
       icon: SavingsIcon,
     },
     {
       value: 90,
       text: `Today's sent users`,
-      bgColor: "white",
+      bgColor: "#0b0beba1",
       loadPos: 25,
       icon: SettingsAccessibilityIcon,
     },
     {
       value: 87,
       text: `New receivers`,
-      bgColor: "white",
+      bgColor: "#0fe00fb5",
       loadPos: 50,
       icon: CallReceivedIcon,
     },
     {
       value: 900,
       text: `Total Amount Today`,
-      bgColor: "white",
+      bgColor: "#ffa515a6",
       loadPos: 99,
       icon: PaymentsIcon,
     },
@@ -407,7 +408,7 @@ const DashboardPanel = () => {
           }
           return (
             <IconButton aria-label='delete' size='large'>
-              <ReceiptLongIcon fontSize='medium' sx={{ color: "#2050a8" }} />
+              <ReceiptLongIcon fontSize='medium' sx={{ color: "#ff000085" }} />
             </IconButton>
           );
         },
@@ -420,13 +421,18 @@ const DashboardPanel = () => {
       cellRenderer: (params) => {
         let label = "Success";
         let color = "success";
+        let bgColor = "#17cf97";
         if (!params.data.status) {
           label = " Failure ";
           color = "error";
+          bgColor = "#FF5733";
         }
         return (
           <div>
-            <Chip label={label} color={color} sx={{}} />
+            <Chip
+              label={label}
+              sx={{ backgroundColor: bgColor, color: "#FFFFFF" }} // Custom background and text color
+            />
           </div>
         );
       },
@@ -451,69 +457,77 @@ const DashboardPanel = () => {
   const valueFormatter = (item) => `${item.value}%`;
 
   return (
-    <div className='dashboard-panel'>
-      <div className='dp-fp'>
-        <div className='info-card-container'>
-          {cardData.map((card, index) => (
-            <InfoCard
-              key={index}
-              value={card.value}
-              text={card.text}
-              bgColor={card.bgColor}
-              loadPos={card.loadPos}
-              icon={card.icon}
-              style={{ height: "20vh", width: { xs: "90%" } }}
-              showCounter={true}
-            />
-          ))}
-        </div>
-        <div className='graph-container'>
+    <>
+      {/* <PanelTitle title={"Dashboard"} /> */}
+      <div className='dashboard-panel'>
+        iuhiuhuih
+        <div className='dp-fp'>
+          <div className='info-card-container'>
+            {cardData.map((card, index) => (
+              <InfoCard
+                key={index}
+                value={card.value}
+                text={card.text}
+                bgColor={card.bgColor}
+                loadPos={card.loadPos}
+                icon={card.icon}
+                style={{ height: "20vh", width: { xs: "90%" } }}
+                showCounter={true}
+              />
+            ))}
+          </div>
           <div className='graph-container'>
-            <div className='graph-1'>
-              <ComponentTitle title={"Graph1"} />
-              <div className='graph-space'>
-                <BarsDataset />
+            <div className='graph-container'>
+              <div className='graph-1 glass_bg '>
+                <ComponentTitle title={"Graph1"} />
+                <div className='graph-space'>
+                  <BarsDataset />
+                </div>
               </div>
-            </div>
-            <div className='graph-1'>
-              {/* <ResponsiveChartContainer> */}
-              {/* <div className='graph-1--title'>
+              <div className='graph-1 glass_bg '>
+                {/* <ResponsiveChartContainer> */}
+                {/* <div className='graph-1--title'>
                 <h2>dkjenbkijbh</h2>
               </div> */}
-              <ComponentTitle title={"Graph2"} />
-              <div className='graph-space'>
-                <PieChart
-                  height={240}
-                  // width={600}
-                  series={[
-                    {
-                      data: mobileAndDesktopOS.slice(0, 5),
-                      innerRadius: 50,
-                      arcLabel: (params) => "xx",
-                      arcLabelMinAngle: 20,
-                      valueFormatter,
-                      color: [
-                        "#2e7d32",
-                        "#66bb6a",
-                        "#388e3c",
-                        "#81c784",
-                        "#a5d6a7",
-                      ], // Green-based colors
-                    },
-                  ]}
-                  skipAnimation={false}
-                />
+                <ComponentTitle title={"Graph2"} />
+                <div className='graph-space'>
+                  <PieChart
+                    height={240}
+                    series={[
+                      {
+                        data: mobileAndDesktopOS
+                          .slice(0, 5)
+                          .map((item, index) => ({
+                            ...item, // Spread the existing properties of the item (id, value, label)
+                            color: [
+                              "rgba(255, 0, 0, 0.52)",
+                              "rgba(11, 11, 235, 0.63)",
+                              "rgba(15, 224, 15, 0.71)",
+                              "rgba(255, 165, 21, 0.65)",
+                              "#8857a5",
+                            ][index], // Assign a color based on the index
+                            arcLabel: (params) => params,
+                          })),
+                        innerRadius: 50,
+
+                        arcLabelMinAngle: 20,
+                        valueFormatter,
+                      },
+                    ]}
+                    skipAnimation={false}
+                  />
+                </div>
+                {/* </ResponsiveChartContainer> */}
               </div>
-              {/* </ResponsiveChartContainer> */}
             </div>
           </div>
         </div>
+        <div className='transaction-table-1 glass_bg '>
+          <ComponentTitle title={"table"} />
+          <Table columnDefs={columnDefs} rows={makeData()} />
+        </div>
       </div>
-      <div className='transaction-table-1'>
-        <ComponentTitle title={"table"} />
-        <Table columnDefs={columnDefs} rows={makeData()} />
-      </div>
-    </div>
+    </>
   );
 };
 

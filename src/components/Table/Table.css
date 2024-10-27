@@ -15,8 +15,9 @@
 /*  */
 /* Add this CSS to your styles file */
 .ag-theme-alpine .ag-header {
-    background-color: rgb(5, 233, 80); /* Change header background color */
-    color: white; /* Change header text color */
+    background-color: rgb(201, 205, 201);
+    /* background: linear-gradient(0deg, rgba(5,233,80,1) 0%, rgba(164,241,189,1) 0%, rgba(255,255,255,1) 100%); */
+    color: rgb(0, 0, 0); /* Change header text color */
   }
   
   .light-theme .ag-header {
@@ -26,12 +27,12 @@
   
   .dark-theme .ag-header {
     background-color: #333; /* Dark mode header background */
-    color: white; /* Dark mode header text color */
+    color: rgb(0, 0, 0); /* Dark mode header text color */
   }
   
   .light-theme {
     background-color: white; /* Light mode table background */
-    color: rgb(224, 208, 208); /* Light mode table text color */
+    color: rgb(0, 0, 0); /* Light mode table text color */
   }
   
   .dark-theme {
@@ -40,7 +41,7 @@
   }
   
   .ag-header-cell-text {
-    color: aliceblue;
+    color: rgb(0, 0, 0);
     font-size: 1rem;
   }
 
@@ -60,5 +61,6 @@
    */
 
    .table-cell {
-    color: #4caf50;
+    color: #126c50;
+    font-weight: 500;
    }

@@ -20,19 +20,23 @@ const InfoCard = ({
   return (
     <Card
       variant='solid'
-      className='dashboard__card'
+      className='dashboard__card glass_bg'
       sx={{
         height: "100%",
         padding: 0,
-        backgroundColor: bgColor,
+        backgroundColor: "transparent",
         color: "red",
         ...style,
       }}
     >
+      <div
+        className='ag-courses-item_bg'
+        style={{ backgroundColor: bgColor }}
+      ></div>
       <CardContent orientation='horizontal' className='card-content'>
         <div className='card--left'>
           {/* {string === true ? (
-           
+
           ) : (
             <h2>{value}e</h2>
           )} */}
@@ -61,15 +65,31 @@ const InfoCard = ({
         </div>
         <div className='card--right'>
           {/* <CircularProgress size='lg' determinate value={0}> */}
-          <div className='circle flip'>
-            {Icon && (
-              <Icon sx={{ fontSize: "1.5rem", color: "rgb(5, 233, 80)" }} />
-            )}
-          </div>
+          {/* <div className='circle'> */}
+          {Icon && <Icon sx={{ fontSize: "3rem", color: "rgb(5, 233, 80)" }} />}
+          {/* </div> */}
           {/* </CircularProgress> */}
         </div>
       </CardContent>
     </Card>
+    // <div class='ag-format-container'>
+    // <div class='ag-courses_box'>
+    // <div class='ag-courses_item'>
+    //   <a href='#' class='ag-courses-item_link'>
+    //     <div class='ag-courses-item_bg'></div>
+
+    //     <div class='ag-courses-item_title'>
+    //       UI/Web&amp;Graph design for teenagers 11-17&#160;years old
+    //     </div>
+
+    //     <div class='ag-courses-item_date-box'>
+    //       Start:
+    //       <span class='ag-courses-item_date'>04.11.2022</span>
+    //     </div>
+    //   </a>
+    // </div>
+    // {/* </div> */}
+    // {/* </div> */}
   );
 };
 

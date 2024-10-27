@@ -55,7 +55,7 @@ const HistoryPanel = () => {
         </div>
       </div> */}
 
-      <div className='transaction-table-1'>
+      <div className='transaction-table-1 glass_bg '>
         <div className='date-picker-container'>
           <div className='date-picker'>
             <input type='date' className='date-input' id='date' name='date' />

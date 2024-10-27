@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./TopNav.css";
 import { RxHamburgerMenu, RxCross2 } from "react-icons/rx";
+import ThemePanel from "../themePanel/ThemePanel";
 const TopNav = ({ navItemsList, style }) => {
   const [open, setOpen] = useState(false);
   useEffect(() => {
@@ -92,6 +93,7 @@ const TopNav = ({ navItemsList, style }) => {
         <li>
           <a href='#'>Contact</a>
         </li> */}
+        <ThemePanel />
       </ul>
       <div className='mobile-nav'>
         <button
