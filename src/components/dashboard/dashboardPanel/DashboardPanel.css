@@ -1,6 +1,6 @@
 .dashboard-panel {
-    background-color: rgb(179, 179, 179);
-    height: 100%;
+    background-color: whitel;
+    height: 200%;
     width: calc(100%-10px);
     padding: 0 5px;
 }
@@ -8,18 +8,23 @@
    height:25vh;
    display: flex;
    align-items: center;
+   justify-content: center;
 }
 
 .graph-container {
-    height: 30vh;
-    width: auto;
-    background-color: aqua;
+    height: 40vh;
+    width: 100%;
+    /* background-color: aqua; */
 }
 
 .transaction-table-1 {
-    height: 30vh;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    padding-top: 10vh;
+    margin-top: 2vh ;
+    height: 100vh;
     width: auto;
-    background-color: rgb(29, 101, 101);
+    padding: 5px;
+    /* background-color: rgb(29, 101, 101); */
 
 }
 
@@ -50,10 +55,10 @@
 /* -------------------------------GRAPH-------------------------- */
 
 .graph-container {
-    height: 35vh;
+    height: 50vh;
     /* background-color: yellow; */
-    width: calc(100% - 20px);
-    padding: 20px 10px 10px 10px;
+    /* width: calc(100% - 20px); */
+    padding: 5px;
     display: flex;
 
     justify-content: space-between;
@@ -61,12 +66,30 @@
 }
 
 .graph-1 {
-     background-color: #25b971;
+    padding: 1% 2% 2% 2%;
+     /* background-color: #25b971; */
     height: 100%;
     width: 49%;
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
+    flex-direction: column;
     align-items: center;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     /* box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; */
+}
+
+/* .graph-1--title {
+    height: 20%;
+    background-color: #25b971;
+    width: 96%;
+    color: aliceblue;
+}
+.graph-1--title h2{
+    font-size: 1.6rem;
+    font-weight: 2rem;
+} */
+.graph-space {
+    padding-top: 5%;
+    height: 80%;
+    width: 96%;
 }

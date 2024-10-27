@@ -15,7 +15,7 @@
 /*  */
 /* Add this CSS to your styles file */
 .ag-theme-alpine .ag-header {
-    background-color: #194e14; /* Change header background color */
+    background-color: rgb(5, 233, 80); /* Change header background color */
     color: white; /* Change header text color */
   }
   

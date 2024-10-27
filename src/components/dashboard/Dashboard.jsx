@@ -7,6 +7,9 @@ import TopNav from "../top-nav/TopNav";
 import SideNav from "./SideNav/SideNav";
 import { Route, Routes } from "react-router-dom"; // Import Routes
 import DashboardPanel from "./dashboardPanel/DashboardPanel";
+import HistoryPanel from "./historyPanel/HistoryPanel";
+import PayoutPanel from "./payoutPanel/payoutPanel";
+import PanelTitle from "./panelTitle/PanelTitle";
 // import DashboardOverview from "./DashboardOverview"; // Example component
 // import DashboardSettings from "./DashboardSettings"; // Example component
 
@@ -46,9 +49,12 @@ const Dashboard = () => {
         </div>
         <Wrapper className='main-panel'>
           {/* <DashboardPanel /> */}
+          <PanelTitle />
           <Routes>
             {/* Use Routes instead of Switch */}
             <Route path='dd' element={<DashboardPanel />} />
+            <Route path='history' element={<HistoryPanel />} />
+            <Route path='payout' element={<PayoutPanel />} />
             {/* Use element prop */}
             {/* <Route
               path='/dashboard/dashboard'

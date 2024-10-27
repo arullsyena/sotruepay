@@ -32,7 +32,7 @@ const chartSetting = {
 
 export default function BarsDataset() {
   return (
-    <div style={{ width: "90vw", height: "200px" }}>
+    <div style={{ width: "99%", height: "100%" }}>
       <BarChart
         dataset={dataset}
         xAxis={[{ scaleType: "band", dataKey: "month" }]}
