@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: black;
-  background-color: #fff;
+  /* background-color: #fff; */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -56,7 +56,7 @@ button:focus-visible {
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
   }
   a:hover {
     color: #747bff;
@@ -71,7 +71,7 @@ body {
 }
 
 .glass_bg {
-  background: rgba(255, 255, 255, 0.2);
+  /* background: rgba(255, 255, 255, 0.2); */
 border-radius: 16px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 /* backdrop-filter: blur(5px); */
@@ -81,11 +81,17 @@ border: 1px solid rgba(255, 255, 255, 0.3);
 
 .form-control{
   /* outline: none; */
+  background-color: transparent;
   border-color: #05e950;
 }
 
 
 .form-control:focus{
   /* outline: none; */
+  background-color: transparent;
   border-color: #118fdd;
+}
+
+input {
+  background-color: transparent;
 }

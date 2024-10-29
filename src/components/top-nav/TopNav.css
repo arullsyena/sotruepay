@@ -7,7 +7,7 @@
     padding: 10px;
     box-sizing: border-box;
     height: 7.5vh;
-background: rgba(255, 255, 255, 0.2);
+/* background: rgba(255, 255, 255, 0.2); */
 border-radius: 10px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(5px);
@@ -131,4 +131,18 @@ color:#17cf97;
         color:black;
         font-weight: 700;
     }
+  }
+
+  .company-title {
+    padding-left: 10px;
+    font-style: oblique;
+    color: #17cf97;
+    font-weight: 800;
+  }
+
+  .nav-item.active a {
+    color: #3498db; /* Color for active item */
+    font-weight: bold; /* Optional: makes the active item stand out */
+    background-color: rgba(52, 152, 219, 0.1); /* Optional: highlight with a background */
+    border-radius: 4px; /* Optional: rounds the background edges */
   }

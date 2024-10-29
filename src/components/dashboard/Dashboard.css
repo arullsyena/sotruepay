@@ -19,7 +19,7 @@ height: 100%;
     /* box-sizing: border-box; */
 flex-grow: 1; /* Allow the main content to take the remaining space */
 /* background-color: #fff;  */
-overflow: scroll;
+/* overflow: scroll; */
 }
 
 /* response */

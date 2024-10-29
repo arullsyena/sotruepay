@@ -1,0 +1,13 @@
+.manage-user-container {
+    height: 200vh;
+    width: 90%;
+    margin: 0 5%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    /* background-color: aqua; */
+}
+
+.spacer--big {
+    height: 4.5rem;
+}

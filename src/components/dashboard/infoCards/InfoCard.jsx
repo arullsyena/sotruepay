@@ -6,8 +6,10 @@ import CircularProgress from "@mui/joy/CircularProgress";
 import SvgIcon from "@mui/joy/SvgIcon";
 import Counter from "../Counter";
 import "./InfoCards.css";
+import styled, { ThemeProvider } from "styled-components";
 
 const InfoCard = ({
+  rupees,
   value,
   text,
   bgColor,
@@ -16,7 +18,17 @@ const InfoCard = ({
   showCounter,
   subtext1,
 }) => {
-  console.log("qwerty", subtext1);
+  console.log("rupesss", rupees, "value ", value);
+
+  const PComponent = styled.p`
+    color: ${(props) => props.theme.subFontColor1};
+    margin-bottom: 0.3rem;
+  `;
+
+  const P2Component = styled.p`
+    color: ${(props) => props.theme.subFontColor2};
+  `;
+
   return (
     <Card
       variant='solid'
@@ -43,23 +55,25 @@ const InfoCard = ({
           {showCounter ? (
             <>
               <Counter
+                rupees={rupees}
                 className='counter-value'
                 value={value}
                 fontSize='2.5rem'
               />
-              <Typography level='body-md'>{text}</Typography>
+              <PComponent level='body-md'>{text}</PComponent>
             </>
           ) : (
             <>
               <Counter
+                rupees={rupees}
                 className='counter-value'
                 value={value}
                 fontSize='2.5rem'
               />
-              <Typography level='body-lg'>{text}</Typography>
-              <Typography level='body-sm' className='card-subtext'>
+              <PComponent level='body-lg'>{text}</PComponent>
+              <P2Component level='body-sm' className='card-subtext'>
                 {subtext1}
-              </Typography>
+              </P2Component>
             </>
           )}
         </div>
@@ -72,24 +86,6 @@ const InfoCard = ({
         </div>
       </CardContent>
     </Card>
-    // <div class='ag-format-container'>
-    // <div class='ag-courses_box'>
-    // <div class='ag-courses_item'>
-    //   <a href='#' class='ag-courses-item_link'>
-    //     <div class='ag-courses-item_bg'></div>
-
-    //     <div class='ag-courses-item_title'>
-    //       UI/Web&amp;Graph design for teenagers 11-17&#160;years old
-    //     </div>
-
-    //     <div class='ag-courses-item_date-box'>
-    //       Start:
-    //       <span class='ag-courses-item_date'>04.11.2022</span>
-    //     </div>
-    //   </a>
-    // </div>
-    // {/* </div> */}
-    // {/* </div> */}
   );
 };
 

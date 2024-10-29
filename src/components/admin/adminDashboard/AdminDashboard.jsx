@@ -1,22 +1,13 @@
-import "./HistoryPanel.css";
+import ComponentTitle from "../../dashboard/componentTitle/ComponentTitle";
+import "./AdminDashboard.css";
 import Table from "../../Table/Table";
-import ComponentTitle from "../componentTitle/ComponentTitle";
-import Button from "react-bootstrap/Button";
-import PanelTitle from "../panelTitle/PanelTitle";
-
-// import "./DashboardPanel.css";
-
-// import ComponentTitle from "../componentTitle/ComponentTitle";
 import Chip from "@mui/material/Chip";
 import React from "react";
-
 import IconButton from "@mui/material/IconButton";
 import ReceiptLongIcon from "@mui/icons-material/ReceiptLong";
-// import PanelTitle from "../panelTitle/PanelTitle";
+import PanelTitle from "../../dashboard/panelTitle/PanelTitle";
 
-const HistoryPanel = ({ theme }) => {
-  const flag = false;
-
+function AdminDashboard({ theme }) {
   const makeData = (rowsToMake) => {
     let data = [
       {
@@ -276,11 +267,21 @@ const HistoryPanel = ({ theme }) => {
 
     return data;
   };
+
+  const flag = false;
   const columnDefs = [
     {
       field: "changed_at",
       filter: true,
       flex: 1.5,
+      // Enable filtering for this column
+      // cellRenderer: (params) => {
+      //   return (
+      //     <div>
+      //       <Chip label='Success' color='success' />
+      //     </div>
+      //   );
+      // },
     },
     { field: "transaction_id", filter: true, flex: 1 },
     { field: "transaction_type", filter: true, flex: 1 },
@@ -337,79 +338,16 @@ const HistoryPanel = ({ theme }) => {
     },
   ];
   return (
-    <>
-      <PanelTitle title={"History"} />
-      <div className='history-container'>
-        {/* <div className='history-title'>
-        <h2>Transaction Table</h2>
-      </div> */}
-        <div className='spacer'></div>
-        <ComponentTitle title={"Transaction Table"} />
-
-        {/* <div id='date-range-picker' date-rangepicker className='flex items-center'>
-        <div className='relative'>
-          <div className='absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none'>
-            <svg
-              className='w-4 h-4 text-gray-500 dark:text-gray-400'
-              aria-hidden='true'
-              xmlns='http://www.w3.org/2000/svg'
-              fill='currentColor'
-              viewBox='0 0 20 20'
-            >
-              <path d='M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z' />
-            </svg>
-          </div>
-          <input
-            id='datepicker-range-start'
-            name='start'
-            type='text'
-            className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
-            placeholder='Select date start'
-          />
-        </div>
-        <span className='mx-4 text-gray-500'>to</span>
-        <div className='relative'>
-          <div className='absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none'>
-            <svg
-              className='w-4 h-4 text-gray-500 dark:text-gray-400'
-              aria-hidden='true'
-              xmlns='http://www.w3.org/2000/svg'
-              fill='currentColor'
-              viewBox='0 0 20 20'
-            >
-              <path d='M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z' />
-            </svg>
-          </div>
-          <input
-            id='datepicker-range-end'
-            name='end'
-            type='text'
-            className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
-            placeholder='Select date end'
-          />
-        </div>
-      </div> */}
-
-        <div className='transaction-table-1 glass_bg '>
-          <div className='date-picker-container'>
-            <div className='date-picker'>
-              <input type='date' className='date-input' id='date' name='date' />
-              {/* <label for='date' className='date-label'></label> */}
-            </div>
-            <div className='date-picker'>
-              <input type='date' className='date-input' id='date' name='date' />
-              {/* <label for='date' className='date-label'></label> */}
-            </div>
-            <Button id='green-btn'>Submit</Button>
-            <Button id='yellow-btn'>Download</Button>
-          </div>
-
-          {/* <Table></Table> */}
-          <Table columnDefs={columnDefs} rows={makeData()} theme={theme} />
-        </div>
-      </div>
-    </>
+    <div className='admin-dashboard-container'>
+      <PanelTitle title={"Admin Dashboard"} />
+      <div className='spacer'></div>
+      <ComponentTitle title={"Admin Users"} />
+      <Table columnDefs={columnDefs} rows={makeData()} theme={theme} />
+      <div className='spacer--big'></div>
+      <ComponentTitle title={"Wallet History"} />
+      <Table columnDefs={columnDefs} rows={makeData()} theme={theme} />
+    </div>
   );
-};
+}
 
-export default HistoryPanel;
+export default AdminDashboard;

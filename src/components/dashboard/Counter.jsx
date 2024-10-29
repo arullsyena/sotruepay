@@ -3,7 +3,13 @@ import CardContent from "@mui/joy/CardContent";
 import CardActions from "@mui/joy/CardActions";
 import Typography from "@mui/joy/Typography";
 
-const Counter = ({ value, fontSize, text }) => {
+import styled, { ThemeProvider } from "styled-components";
+const H2Component = styled.h2`
+  color: ${(props) => props.theme.fontColor1};
+`;
+
+const Counter = ({ value, fontSize, text, rupees }) => {
+  console.log("rrrr", rupees);
   const formatCurrency = (value) => {
     return `${
       text === "Wallet's money" || text === "Total Amount Today" ? "₹" : ""
@@ -44,9 +50,10 @@ const Counter = ({ value, fontSize, text }) => {
   }, [targetValue]);
 
   return (
-    <Typography level='h2' sx={{ fontSize }}>
+    <H2Component sx={{ fontSize }}>
+      {rupees ? "₹" : ""}
       {formatCurrency(counter)}
-    </Typography>
+    </H2Component>
   );
 };
 

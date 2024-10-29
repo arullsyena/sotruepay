@@ -19,11 +19,21 @@ import React from "react";
 import IconButton from "@mui/material/IconButton";
 import ReceiptLongIcon from "@mui/icons-material/ReceiptLong";
 import ThemePanel from "../../themePanel/ThemePanel";
+import PanelTitle from "../panelTitle/PanelTitle";
 
-const DashboardPanel = () => {
+import styled from "styled-components";
+
+const GraphCardComponent = styled.div`
+  background-color: ${(props) => props.theme.secondary};
+  color: ${(props) => props.theme.color};
+`;
+
+const DashboardPanel = ({ theme }) => {
+  console.log("themeee", theme);
   const cardData = [
     {
       value: 450,
+      rupees: true,
       text: `Wallet's money`,
       bgColor: "#ff000085",
       loadPos: 0,
@@ -31,6 +41,7 @@ const DashboardPanel = () => {
     },
     {
       value: 90,
+      rupees: false,
       text: `Today's sent users`,
       bgColor: "#0b0beba1",
       loadPos: 25,
@@ -38,6 +49,7 @@ const DashboardPanel = () => {
     },
     {
       value: 87,
+      rupees: false,
       text: `New receivers`,
       bgColor: "#0fe00fb5",
       loadPos: 50,
@@ -45,6 +57,7 @@ const DashboardPanel = () => {
     },
     {
       value: 900,
+      rupees: true,
       text: `Total Amount Today`,
       bgColor: "#ffa515a6",
       loadPos: 99,
@@ -457,14 +470,14 @@ const DashboardPanel = () => {
   const valueFormatter = (item) => `${item.value}%`;
 
   return (
-    <>
-      {/* <PanelTitle title={"Dashboard"} /> */}
+    <div>
+      <PanelTitle title={"Dashboard"} />
       <div className='dashboard-panel'>
-        iuhiuhuih
         <div className='dp-fp'>
           <div className='info-card-container'>
             {cardData.map((card, index) => (
               <InfoCard
+                rupees={card.rupees}
                 key={index}
                 value={card.value}
                 text={card.text}
@@ -478,13 +491,13 @@ const DashboardPanel = () => {
           </div>
           <div className='graph-container'>
             <div className='graph-container'>
-              <div className='graph-1 glass_bg '>
+              <GraphCardComponent className='graph-1 glass_bg '>
                 <ComponentTitle title={"Graph1"} />
                 <div className='graph-space'>
                   <BarsDataset />
                 </div>
-              </div>
-              <div className='graph-1 glass_bg '>
+              </GraphCardComponent>
+              <GraphCardComponent className='graph-1 glass_bg '>
                 {/* <ResponsiveChartContainer> */}
                 {/* <div className='graph-1--title'>
                 <h2>dkjenbkijbh</h2>
@@ -498,36 +511,39 @@ const DashboardPanel = () => {
                         data: mobileAndDesktopOS
                           .slice(0, 5)
                           .map((item, index) => ({
-                            ...item, // Spread the existing properties of the item (id, value, label)
+                            ...item,
                             color: [
                               "rgba(255, 0, 0, 0.52)",
                               "rgba(11, 11, 235, 0.63)",
                               "rgba(15, 224, 15, 0.71)",
                               "rgba(255, 165, 21, 0.65)",
                               "#8857a5",
-                            ][index], // Assign a color based on the index
-                            arcLabel: (params) => params,
+                            ][index],
                           })),
                         innerRadius: 50,
-
                         arcLabelMinAngle: 20,
                         valueFormatter,
+                        labelContent: (params) => (
+                          <div style={{ color: "#FFFFFF", fontSize: "16px" }}>
+                            {params.label}
+                          </div>
+                        ),
                       },
                     ]}
                     skipAnimation={false}
                   />
                 </div>
                 {/* </ResponsiveChartContainer> */}
-              </div>
+              </GraphCardComponent>
             </div>
           </div>
         </div>
         <div className='transaction-table-1 glass_bg '>
-          <ComponentTitle title={"table"} />
-          <Table columnDefs={columnDefs} rows={makeData()} />
+          <ComponentTitle title={"Wallet History"} />
+          <Table columnDefs={columnDefs} rows={makeData()} theme={theme} />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

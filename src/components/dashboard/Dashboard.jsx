@@ -11,36 +11,49 @@ import HistoryPanel from "./historyPanel/HistoryPanel";
 import PayoutPanel from "./payoutPanel/payoutPanel";
 import PanelTitle from "./panelTitle/PanelTitle";
 import ModalComponent from "../modal/ModalComponent";
-// import DashboardOverview from "./DashboardOverview"; // Example component
-// import DashboardSettings from "./DashboardSettings"; // Example component
+import ThemePanel from "../themePanel/ThemePanel";
+import SettingsSuggestIcon from "@mui/icons-material/SettingsSuggest";
+import AdminDashboard from "../admin/adminDashboard/AdminDashboard";
+import ManageUsers from "../admin/manageUsers/ManageUsers";
 
 const Wrapper = styled.div``;
 
-// background-color: ${({ theme }) => theme.background};
-//   color: ${({ theme }) => theme.text};
-const Dashboard = () => {
-  const [isModalOpen, setModalOpen] = useState(false);
+const Dashboard = ({ theme, toggleTheme, isAdmin }) => {
+  const [isOpen, setIsOpen] = useState(false);
 
-  const openModal = () => setModalOpen(true);
-  const closeModal = () => setModalOpen(false);
+  //
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setIsOpen(true);
+  const handleClose = () => setIsOpen(false);
+  // const [isModalOpen, setModalOpen] = useState(false);
 
-  const [theme, setTheme] = useState(lightTheme);
+  // const openModal = () => setModalOpen(true);
+  // const closeModal = () => setModalOpen(false);
 
-  const toggleTheme = () => {
-    setTheme((prevTheme) =>
-      prevTheme === lightTheme ? darkTheme : lightTheme
-    );
-  };
-
+  // const handleOpen = () => {
+  //   console.log("hooo");
+  // };
   const navItemsList = [
-    { displayName: "Dashboard", link: "ef3rf3", className: "" },
-    { displayName: "History", link: "ef3rf3", className: "" },
-    { displayName: "Payout", link: "ef3rf3", className: "" },
-    { displayName: "Logout", link: "ef3rf3", className: "" },
+    { displayName: "Dashboard", link: "/dashboard/dashboard", className: "" },
+    { displayName: "History", link: "/dashboard/history", className: "" },
+    { displayName: "Payout", link: "/dashboard/payout", className: "" },
+    { displayName: "Logout", link: "/logout", className: "" },
+    {
+      displayName: "icon",
+      link: "#",
+      className: "",
+      onClick: handleOpen,
+      icon: (
+        <SettingsSuggestIcon
+          fontSize='large'
+          style={{ color: "#017bfe", cursor: "pointer" }}
+        />
+      ),
+    },
   ];
 
   return (
-    <ThemeProvider theme={theme}>
+    <>
       <TopNav
         toggleTheme={toggleTheme}
         navItemsList={navItemsList}
@@ -49,36 +62,38 @@ const Dashboard = () => {
           width: "auto",
         }}
       />
-      <button onClick={openModal}>Open Modal</button>
-
-      <ModalComponent isOpen={isModalOpen} onClose={closeModal}>
-        {/* <h2>Modal Title</h2>
-        <p>This is the content inside the modal. You can put anything here.</p> */}
-        <button onClick={closeModal}>Close</button>
-      </ModalComponent>
+      <ThemePanel
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        toggleTheme={toggleTheme}
+        theme={theme}
+      />
       <div className='panel-container'>
-        {/* <div className='sidenav-container'>
-          <SideNav />
-        </div> */}
         <Wrapper className='main-panel'>
-          {/* <DashboardPanel /> */}
-          <PanelTitle title={"Dashboard"} />
-          <Routes>
-            {/* Use Routes instead of Switch */}
-            <Route path='dd' element={<DashboardPanel />} />
-            <Route path='history' element={<HistoryPanel />} />
-            <Route path='payout' element={<PayoutPanel />} />
-            {/* Use element prop */}
-            {/* <Route
-              path='/dashboard/dashboard'
-              element={<DashboardPanel />}
-            />{" "} */}
-            {/* Use element prop */}
-            {/* Add more routes as needed */}
-          </Routes>
+          {!isAdmin ? (
+            <Routes>
+              <Route
+                path='dashboard'
+                element={<DashboardPanel theme={theme} />}
+              />
+              <Route path='history' element={<HistoryPanel theme={theme} />} />
+              <Route path='payout' element={<PayoutPanel theme={theme} />} />
+            </Routes>
+          ) : (
+            <Routes>
+              <Route
+                path='dashboard'
+                element={<AdminDashboard theme={theme} />}
+              />
+              <Route
+                path='manageusers'
+                element={<ManageUsers theme={theme} />}
+              />
+            </Routes>
+          )}
         </Wrapper>
       </div>
-    </ThemeProvider>
+    </>
   );
 };
 

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./ThemePanel.css";
+import Brightness4Icon from "@mui/icons-material/Brightness4";
 
-const ThemePanel = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const ThemePanel = ({ isOpen, setIsOpen, toggleTheme, theme }) => {
   const [selectedTheme, setSelectedTheme] = useState("light");
   const [selectedColor, setSelectedColor] = useState("#3498db"); // Default selected color
 
@@ -29,10 +29,6 @@ const ThemePanel = () => {
 
   return (
     <div className='side-panel-container'>
-      <button className='toggle-button' onClick={togglePanel}>
-        {isOpen ? "Close" : "Open"} Panel
-      </button>
-
       <div
         className={`side-panel-overlay ${isOpen ? "open" : ""}`}
         onClick={togglePanel}
@@ -41,26 +37,15 @@ const ThemePanel = () => {
       <div className={`side-panel ${isOpen ? "open" : "closed"}`}>
         <div id='tggg' className='panel-content'>
           <div className='theme-form'>
-            <h2>Select Theme Mode</h2>
+            <h2>Toggle Theme</h2>
             <div className='theme-buttons'>
-              <button
-                className={`theme-button ${
-                  selectedTheme === "dark" ? "active" : ""
-                }`}
-                onClick={() => selectTheme("dark")}
-              >
-                Dark Mode
-              </button>
-              <button
-                className={`theme-button ${
-                  selectedTheme === "light" ? "active" : ""
-                }`}
-                onClick={() => selectTheme("light")}
-              >
-                Light Mode
-              </button>
+              <Brightness4Icon
+                fontSize='large'
+                onClick={() => toggleTheme()}
+                style={{ color: theme.light ? "black" : "white" }}
+              />
             </div>
-            <h3>Select Color</h3>
+            {/* <h3>Select Color</h3>
             <div className='color-options'>
               {colors.map((color) => (
                 <div
@@ -72,7 +57,7 @@ const ThemePanel = () => {
                   onClick={() => selectColor(color)}
                 />
               ))}
-            </div>
+            </div> */}
           </div>
           <button className='close-button' onClick={togglePanel}>
             Close

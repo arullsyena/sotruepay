@@ -275,8 +275,9 @@ import { themeQuartz } from "@ag-grid-community/theming";
 //   return data;
 // };
 
-const GridExample = ({ flag, columnDefs, rows }) => {
-  const theme = "light";
+const GridExample = ({ flag, columnDefs, rows, theme }) => {
+  const isLightTheme = theme.light;
+
   //   const { theme, toggleTheme } = useContext(ThemeContext);
   // const [rowData] = useState(() => makeData(15));
   // console.log(rowData);
@@ -359,10 +360,21 @@ const GridExample = ({ flag, columnDefs, rows }) => {
     setIsDarkMode((prev) => !prev);
   };
   const getRowStyle = (params) => {
-    if (params.node.rowIndex % 2 === 1 && theme === "light") {
+    if (params.node.rowIndex % 2 === 1 && isLightTheme) {
       // Style odd rows
-      return { background: "#e7e7e7" }; // Light gray background for odd rows
+      return { background: "rgb(239 239 239)" }; // Light gray background for odd rows
     }
+
+    if (params.node.rowIndex % 2 === 1 && !isLightTheme) {
+      // Style odd rows
+      return { background: theme.secondary }; // Light gray background for odd rows
+    }
+
+    if (params.node.rowIndex % 2 === 0 && !isLightTheme) {
+      // Style odd rows
+      return { background: theme.background }; // Light gray background for odd rows
+    }
+
     return null; // Default for even rows
   };
 
@@ -377,7 +389,7 @@ const GridExample = ({ flag, columnDefs, rows }) => {
 
       <div
         className={`${
-          theme === "light" ? "ag-theme-alpine" : "ag-theme-alpine-dark"
+          isLightTheme ? "ag-theme-alpine" : "ag-theme-alpine-dark"
         }`}
         style={{ height: 600, width: "100%" }}
       >

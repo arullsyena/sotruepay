@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import "./TopNav.css";
 import { RxHamburgerMenu, RxCross2 } from "react-icons/rx";
 import ThemePanel from "../themePanel/ThemePanel";
-const TopNav = ({ navItemsList, style }) => {
+const TopNav = ({ navItemsList, style, toggleTheme }) => {
   const [open, setOpen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(null);
   useEffect(() => {
     const closeNavbar = () => {
       setOpen(false);
@@ -17,7 +18,7 @@ const TopNav = ({ navItemsList, style }) => {
   }, []);
   return (
     <nav className='top-nav' style={style}>
-      <a href='#' className='company-name'>
+      {/* <a href='#' className='company-name'>
         <svg
           id='logo-37'
           style={{ width: "30", height: "30" }}
@@ -71,29 +72,36 @@ const TopNav = ({ navItemsList, style }) => {
             className='ccustom'
             fill='#25CAAC'
           ></path>{" "}
-        </svg>
-        <span>So-True Pay </span>
-      </a>
+        </svg> */}
+      <span className='company-title'>SoTrue Pay </span>
+      {/* </a> */}
 
-      <ul className={`${open ? "top-nav__list active" : "top-nav__list"}`}>
+      {/* <ul className={`${open ? "top-nav__list active" : "top-nav__list"}`}>
         {navItemsList.map((navItem, index) => (
           <li key={index} className={`nav-item ${navItem.className}`}>
-            <a href='#'>{navItem.displayName}</a>
+            <a href={navItem.link}>{navItem.displayName}</a>
           </li>
         ))}
-        {/* <li>
-          <a href='#'>About</a>
-        </li>
-        <li>
-          <a href='#'>Projects</a>
-        </li>
-        <li>
-          <a href='#'>News</a>
-        </li>
-        <li>
-          <a href='#'>Contact</a>
-        </li> */}
-        <ThemePanel />
+        
+      </ul> */}
+      <ul className={`${open ? "top-nav__list active" : "top-nav__list"}`}>
+        {navItemsList.map((navItem, index) => (
+          <li
+            key={index}
+            className={`nav-item ${activeIndex === index ? "active" : ""} ${
+              navItem.className
+            }`}
+            onClick={() => setActiveIndex(index)}
+          >
+            {navItem.displayName === "icon" ? (
+              <a onClick={navItem.onClick}>{navItem.icon}</a>
+            ) : (
+              <a href={navItem.link} onClick={navItem.onClick}>
+                {navItem.displayName}
+              </a>
+            )}
+          </li>
+        ))}
       </ul>
       <div className='mobile-nav'>
         <button

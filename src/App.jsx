@@ -1,5 +1,10 @@
 import "./App.css";
 import Home from "./components/home/Home";
+import React, { useState } from "react";
+// src/components/dashboard/Dashboard.js
+import styled, { ThemeProvider } from "styled-components";
+
+import { lightTheme, darkTheme } from "../src/components/dashboard/theme";
 import TopNav from "./components/top-nav/TopNav";
 import ScrollDown from "./components/animation/scrollDown/ScrollDown";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
@@ -12,6 +17,7 @@ import { AuthProvider } from "./auth/AuthProvider";
 import { useAuth } from "./auth/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import { checkAuth } from "./api/auth";
+import { createGlobalStyle } from "styled-components";
 
 import "react-toastify/dist/ReactToastify.css";
 
@@ -47,11 +53,38 @@ function PrivateRoute({ children }) {
 
 function App() {
   const { showNotification } = Notify(); // Use the custom hook
-  //
+
+  const GlobalStyle = createGlobalStyle`
+  body {
+    background-color: ${(props) => props.theme.background};
+  
+    font-family: Arial, sans-serif;
+
+    transition: background-color 0.3s ease;
+  }
+
+`;
+
+  const [theme, setTheme] = useState(lightTheme);
+  console.log("theme", theme);
+
+  const toggleTheme = () => {
+    console.log("theme", "togggle");
+    setTheme((prevTheme) =>
+      prevTheme === lightTheme ? darkTheme : lightTheme
+    );
+  };
+
+  const StyledComponent = styled.div`
+    background-color: ${(props) => props.theme.background};
+    color: ${(props) => props.theme.color};
+    padding: 20px;
+    border-radius: 8px;
+  `;
 
   //
   const navItemsList = [
-    { displayName: "Login", link: "ef3rf3", className: "" },
+    { displayName: "Login", link: "login", className: "" },
     { displayName: "About", link: "ef3rf3", className: "" },
     { displayName: "Services", link: "ef3rf3", className: "" },
     { displayName: "Dashboard", link: "ef3rf3", className: "" },
@@ -69,6 +102,7 @@ function App() {
   };
 
   return (
+    // <StyledComponent>
     <BrowserRouter>
       <ToastContainer
         position='top-right'
@@ -83,31 +117,52 @@ function App() {
       />
       {/* <button onClick={() => checkAuth()}>Show Toast</button> */}
       <AuthProvider>
-        <Routes>
-          <Route
-            path='/'
-            element={
-              <>
-                <TopNav navItemsList={navItemsList} />
-                {/* <ScrollDown /> */}
-                <Home />
-              </>
-            }
-          />
+        <ThemeProvider theme={theme}>
+          <GlobalStyle />
+          <Routes>
+            <Route
+              path='/'
+              element={
+                <>
+                  <TopNav navItemsList={navItemsList} />
+                  {/* <ScrollDown /> */}
+                  <Home />
+                </>
+              }
+            />
 
-          <Route
-            path='/dashboard/*'
-            element={
-              // <PrivateRoute path='/dashboard'>
-              <Dashboard />
-              // </PrivateRoute>
-            }
-          />
+            <Route
+              path='/dashboard/*'
+              element={
+                // <PrivateRoute path='/dashboard'>
+                <Dashboard
+                  theme={theme}
+                  toggleTheme={toggleTheme}
+                  isAdmin={false}
+                />
+                // </PrivateRoute>
+              }
+            />
 
-          <Route path='/login' element={<LoginPage />} />
-        </Routes>
+            <Route
+              path='/admin/*'
+              element={
+                // <PrivateRoute path='/dashboard'>
+                <Dashboard
+                  theme={theme}
+                  toggleTheme={toggleTheme}
+                  isAdmin={true}
+                />
+                // </PrivateRoute>
+              }
+            />
+
+            <Route path='/login' element={<LoginPage />} />
+          </Routes>
+        </ThemeProvider>
       </AuthProvider>
     </BrowserRouter>
+    // </StyledComponent>
   );
 }
 

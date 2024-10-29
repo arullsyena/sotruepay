@@ -1,14 +1,26 @@
+import { red } from "@mui/material/colors";
+import { color } from "framer-motion";
+
 // src/theme.js
 export const lightTheme = {
-  background: "red",
+  background: "white",
+  color: "black",
   text: "#333333",
   primary: "#007bff",
-  secondary: "#6c757d",
+  secondary: "white",
+  fontColor1: "black",
+  subFontColor1: "black",
+  subFontColor2: "#5c9568",
+  light: true,
 };
 
 export const darkTheme = {
-  background: "#1a1a1a",
+  background: "#071025",
   text: "#dddddd",
+  color: "white !important",
   primary: "#0d6efd",
-  secondary: "#adb5bd",
+  secondary: "#101935",
+  fontColor1: "white",
+  subFontColor1: "#d2d2d2",
+  subFontColor2: "#989898",
 };
