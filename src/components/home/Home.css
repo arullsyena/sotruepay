@@ -5,6 +5,8 @@
 .order-2 {
   margin-top: 40px !important;
 }
+
+
 .welcomDiv {
     /* height: 65vh; */
     width: 100%;
@@ -88,8 +90,8 @@
   -webkit-text-fill-color: transparent;
   animation: textclip 1.5s linear ;
   display: inline-block;
-      font-size: 4rem;
-      font-weight: 700;
+  font-size: 3.5rem;
+  font-weight: 700;
 }
 
 .animate-charcter2
@@ -113,6 +115,7 @@
   /* animation: textclip 1.5s linear ; */
   /* display: inline-block; */
       font-weight: 700;
+      font-size: 2rem;
 }
 
 @keyframes textclip {
@@ -181,7 +184,7 @@
   .gcards-container {
     background-color: #dfead9;
     height: 45vh;
-    /* width: 100%; */
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     padding: 10px;
@@ -225,8 +228,8 @@
     background: linear-gradient(0deg, rgba(5, 233, 80, 1) 0%, rgba(153, 246, 183, 1) 0%, rgba(255, 255, 255, 1) 100%);
 }
 .info-card .css-uks7c6-MuiSvgIcon-root {
-  width: 2em;
-  height: 2em;
+  width: 1.5em;
+  height: 1.5em;
   color: #198754 !important;
 } 
   
@@ -242,7 +245,7 @@
 
   .info-card--content{
     font-size: 16px;
-    color: #818181;
+    color: black;
   }
 
 
@@ -281,6 +284,14 @@
   bottom: 5px; 
   right: 160px;
   opacity: 0.5; 
+}
+
+@media (max-width: 900px) {
+  .rupee-note{
+  height: 12rem !important;
+  width: 12rem !important;
+  }
+  
 }
 
 

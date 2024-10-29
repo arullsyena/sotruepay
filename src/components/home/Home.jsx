@@ -12,39 +12,45 @@ import ScrollDown from "../../components/animation/scrollDown/ScrollDown";
 
 const Home = () => {
   return (
-    <div className='container'>
-      
+    <div className="container">
       <main>
-        <ScrollDown />
-        <div className='welcomDiv container'>
-          <div className='welcome-section row'>
-            <div className='welcome-img floating col-md-4 col-sm-12 order-1 order-md-1'>
-              <img src={rn2} className='rupee-note item' alt='Rupees Image' />
-            </div>
-
-            <div className='welcome-title col-md-8 col-sm-12 order-2 order-md-2'>
-              <p className='home-page__text'>
-                <h5 className='line-1 animate-charcter2'>Welcome To</h5>
-                <h5 className='line-2 animate-charcter1'>So-True Pay</h5>
-              </p>
-              <p className='subheading'>
-                Play Chess, Rummy, and Ludo with exciting skins and win rewards!
-              </p>
+        <div className="full-screen-section">
+          <ScrollDown />
+          <div className="welcomDiv container">
+            <div className="welcome-section row">
+              <div className="welcome-img floating col-md-4 col-sm-12 order-1 order-md-1">
+                <img src={rn2} className="rupee-note item" alt="Rupees Image" />
+              </div>
+              <div className="welcome-title col-md-8 col-sm-12 order-2 order-md-2">
+                <div className="home-page__text">
+                  <h5 className="line-1 animate-charcter2">Welcome To</h5>
+                  <h5 className="line-2 animate-charcter1">So-True Pay</h5>
+                </div>
+                <p className="subheading">
+                  Play Chess, Rummy, and Ludo with exciting skins and win rewards!
+                </p>
+              </div>
             </div>
           </div>
         </div>
-        <PopularGames />
-        <WhyChooseUs />
-        <RobustSecurity />
-        {/* <Testimonials /> */}
-        <ContactSupport/>
+        <div className="full-screen-section">
+          <PopularGames />
+        </div>
+        <div className="full-screen-section">
+          <WhyChooseUs />
+        </div>
+        <div className="full-screen-section">
+          <RobustSecurity />
+        </div>
+        <div className="full-screen-section">
+          <ContactSupport />
+        </div>
       </main>
-      {/* <footer className='home-page__footer'>
-        <p className='home-page__footer-text'>
-          © 2024 Our Website. All rights reserved.
-        </p>
-      </footer> */}
+      <footer className="home-page__footer">
+        <p className="home-page__footer-text">© 2024 Our Website. All rights reserved.</p>
+      </footer>
     </div>
   );
+  
 };
 export default Home;
