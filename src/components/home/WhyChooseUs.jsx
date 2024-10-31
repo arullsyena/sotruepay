@@ -47,8 +47,7 @@ const WhyChooseUs = () => {
     <section className='home-page__section home-page__sections'>
       <h2 className='section--title'>Why Choose Us</h2>
       <hr width='100%' color='#05e950' />
-      <div className='spacer'></div>
-      <div className='container'>
+      <div className=''>
       <div class="row">
         {features.map((feature, index) => (
           

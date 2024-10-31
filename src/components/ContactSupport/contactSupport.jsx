@@ -6,8 +6,8 @@ const ContactSupport = () => {
   return (
 <section className="home-page__section home-page__sections">
   <h2 className="section--title">Contact</h2>
-  {/* <hr width="100%" color="#05e950" /> */}
-  <div className="container">
+   <hr width="100%" color="#05e950" />
+  <div className="">
     <div className="contact-card">
       <div className="row">
         <div className="col-md-6 col-sm-12 contactCard1">

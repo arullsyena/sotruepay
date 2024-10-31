@@ -6,15 +6,15 @@
     
   }
   
-  .accordion {
+  .card {
     /* background: linear-gradient(200deg, #ffffff 13.57%, rgb(232, 232, 232) 98.38%); */
     /* width: max(50vw, 280px); */
-    padding: 25px 30px 10px;
+    /* padding: 25px 30px 10px; */
     border: 2px solid #05e950;
-    border-radius: 15px;
+    border-radius: 15px !important;
     margin-bottom: 20px;
     box-shadow: 0 30px 30px -10px rgba(0, 0, 0, .3);
-    height: 12.5rem;
+    border: 2px solid #05e950 !important;
     
     &:nth-child(2) {
       background:  linear-gradient(200deg, #ffffff 13.57%, rgb(232, 232, 232) 98.38%);
@@ -29,9 +29,6 @@
     }
   }
   
-  .spacer {
-    height: 8vh;
-  }
   
   @media (max-width: 480px) {
     .accordion {

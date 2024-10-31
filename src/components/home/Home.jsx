@@ -12,16 +12,16 @@ import ScrollDown from "../../components/animation/scrollDown/ScrollDown";
 
 const Home = () => {
   return (
-    <div className="container">
+    <div className="">
       <main>
         <div className="full-screen-section">
           <ScrollDown />
-          <div className="welcomDiv container">
+          <div className="welcomDiv ">
             <div className="welcome-section row">
-              <div className="welcome-img floating col-md-4 col-sm-12 order-1 order-md-1">
+              <div className="welcome-img floating col-md-4 col-sm-12">
                 <img src={rn2} className="rupee-note item" alt="Rupees Image" />
               </div>
-              <div className="welcome-title col-md-8 col-sm-12 order-2 order-md-2">
+              <div className="welcome-title col-md-8 col-sm-12 ">
                 <div className="home-page__text">
                   <h5 className="line-1 animate-charcter2">Welcome To</h5>
                   <h5 className="line-2 animate-charcter1">So-True Pay</h5>
@@ -33,16 +33,16 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="full-screen-section">
+        <div className="full-gameScreen-section">
           <PopularGames />
         </div>
-        <div className="full-screen-section">
+        <div className="full-WhyChooseUsScreen-section">
           <WhyChooseUs />
         </div>
-        <div className="full-screen-section">
+        <div className="full-RobustSecurityScreen-section">
           <RobustSecurity />
         </div>
-        <div className="full-screen-section">
+        <div className="full-ContactSupportScreen-section">
           <ContactSupport />
         </div>
       </main>

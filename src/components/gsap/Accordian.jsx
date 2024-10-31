@@ -19,7 +19,7 @@ const Accordian = () => {
   const accordionData = [
     {
       title: "01 Top-Notch Security",
-      text: "Implementing cutting-edge encryption, secure authentication, and real-time fraud detection to protect user data and financial transactions.",
+      text: "Implementing cutting-edge encryption, secure authentication, and real-time fraud detection to protect user data and financial transactions. ",
     },
     {
       title: "02 Advanced Wallet Solutions",
@@ -49,12 +49,12 @@ const Accordian = () => {
             
             // <motion.div key={index} variants={cardVariants}>
               <div class="col-lg-6 col-md-6 col-sm-12">
-              <div className='accordion'>
+              <div className='card'>
                 <div className='section--title accordion--title'>
                   {item.title}
                 </div>
                 <br />
-                <div className='text'>{item.text}</div>
+                <div className='text card-body'><p>{item.text}</p></div>
               </div>
               </div>
               

@@ -2,7 +2,7 @@ import "./GameCard.css";
 
 const GameCard = ({ imgs1, imgs2, titleImg }) => {
   return (
-    <div className='card-wrapper'>
+    <div className='card-wrapper row col'>
       <div className='game-card'>
         <div className='wrapper'>
           <img src={imgs1} className='cover-image' />

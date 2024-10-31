@@ -30,9 +30,8 @@ const PopularGames = () => {
     <section className='home-page__section home-page__sections'>
       <h2 className='section--title'>Popular Games</h2>
       <hr width='100%' color='#05e950' />
-      <div className='spacer'></div>
 
-      <div className='gcards-container'>
+      <div className='gcards-container row'>
         {cardContent.map((cardContent, index) => (
           <Cards
             key={index}
