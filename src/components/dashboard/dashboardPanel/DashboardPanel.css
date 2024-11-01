@@ -1,3 +1,9 @@
+.chart-container {
+    height: 100%;
+    width: 100%;
+
+}
+
 .dashboard-panel {
     /* background-color: whitel; */
     height: 200%;
@@ -11,8 +17,8 @@
    justify-content: center;
 }
 
-.graph-container {
-    height: 40vh;
+.graph-container-1 {
+    height: 50vh;
     width: 100%;
     /* background-color: aqua; */
 }
@@ -94,3 +100,48 @@
     height: 80%;
     width: 96%;
 }
+
+
+@media (max-width: 768px) {
+   
+  }
+  
+  /* Styles for small mobile devices (480px and below) */
+  @media (max-width: 480px) {
+
+    .graph-container {
+       
+        display: flex;
+    
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        height: 100%;
+    }
+
+
+.graph-1 {
+    padding: 2% 0% 2% 0%;
+   
+    height: 44vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.graph-container-1 {
+    height: 90vh;
+    width: 100%;
+    /* background-color: aqua; */
+}
+
+.ag-theme-alpine {
+    overflow-x: scroll;
+}
+
+.transaction-table-1 {
+    height: 80vh;
+}
+    
+  }

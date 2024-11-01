@@ -296,7 +296,8 @@ const GridExample = ({ flag, columnDefs, rows, theme }) => {
     {
       field: "changed_at",
       filter: true,
-      flex: 1.5,
+      width: 930,
+      // flex: 1.5,
       // Enable filtering for this column
       // cellRenderer: (params) => {
       //   return (
@@ -306,19 +307,37 @@ const GridExample = ({ flag, columnDefs, rows, theme }) => {
       //   );
       // },
     },
-    { field: "transaction_id", filter: true, flex: 1 },
-    { field: "transaction_type", filter: true, flex: 1 },
-    { field: "old_value", filter: true, width: 230, flex: 1 },
+    {
+      field: "transaction_id",
+      filter: true,
+      width: 230,
+      // flex: 1
+    },
+    {
+      field: "transaction_type",
+      filter: true,
+      width: 230,
+      //  flex: 1
+    },
+    {
+      field: "old_value",
+      filter: true,
+      width: 230,
+      width: 230,
+      // flex: 1
+    },
     {
       field: "new_value",
       filter: true,
+      width: 230,
       // width: isSmallScreen ? 100 : 300,
-      flex: 1,
+      // flex: 1,
       cellClass: "table-cell",
     },
 
     {
       field: flag ? "Actions" : "transaction_amount",
+      width: 230,
       filter: true,
       ...(flag && {
         cellRenderer: (params) => {
@@ -338,7 +357,8 @@ const GridExample = ({ flag, columnDefs, rows, theme }) => {
     },
     {
       field: "status",
-      flex: 1,
+      width: 230,
+      // flex: 1,
       filter: true, // Enable filtering for this column
       cellRenderer: (params) => {
         let label = "Success";

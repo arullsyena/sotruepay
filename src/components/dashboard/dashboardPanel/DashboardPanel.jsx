@@ -4,10 +4,20 @@ import SettingsAccessibilityIcon from "@mui/icons-material/SettingsAccessibility
 import CallReceivedIcon from "@mui/icons-material/CallReceived";
 import PaymentsIcon from "@mui/icons-material/Payments";
 import SavingsIcon from "@mui/icons-material/Savings";
-import { PieChart } from "@mui/x-charts/PieChart";
+// import { PieChart } from "@mui/x-charts/PieChart";
 
 import Table from "../../Table/Table";
-import BarsDataset from "../../graphs/BarDataSet";
+
+import { PieChart, Pie, Cell, Legend, Tooltip } from "recharts";
+import {
+  AreaChart,
+  Area,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  ResponsiveContainer,
+} from "recharts";
+
 import ComponentTitle from "../componentTitle/ComponentTitle";
 
 //
@@ -387,29 +397,38 @@ const DashboardPanel = ({ theme }) => {
     {
       field: "changed_at",
       filter: true,
-      flex: 1.5,
-      // Enable filtering for this column
-      // cellRenderer: (params) => {
-      //   return (
-      //     <div>
-      //       <Chip label='Success' color='success' />
-      //     </div>
-      //   );
-      // },
+      width: 250,
     },
-    { field: "transaction_id", filter: true, flex: 1 },
-    { field: "transaction_type", filter: true, flex: 1 },
-    { field: "old_value", filter: true, width: 230, flex: 1 },
+    {
+      field: "transaction_id",
+      filter: true,
+      width: 190,
+      // flex: 1
+    },
+    {
+      field: "transaction_type",
+      filter: true,
+      width: 200,
+      // flex: 1
+    },
+    {
+      field: "old_value",
+      filter: true,
+      width: 180,
+      // flex: 1
+    },
     {
       field: "new_value",
       filter: true,
+      width: 180,
       // width: isSmallScreen ? 100 : 300,
-      flex: 1,
+      // flex: 1,
       cellClass: "table-cell",
     },
 
     {
       field: flag ? "Actions" : "transaction_amount",
+      width: 220,
       filter: true,
       ...(flag && {
         cellRenderer: (params) => {
@@ -429,7 +448,8 @@ const DashboardPanel = ({ theme }) => {
     },
     {
       field: "status",
-      flex: 1,
+      // flex: 1,
+      width: 170,
       filter: true, // Enable filtering for this column
       cellRenderer: (params) => {
         let label = "Success";
@@ -469,6 +489,28 @@ const DashboardPanel = ({ theme }) => {
 
   const valueFormatter = (item) => `${item.value}%`;
 
+  //below new graph dataya
+
+  const data = [
+    { name: "Apple", value: 400 },
+    { name: "Orange", value: 300 },
+    { name: "Banana", value: 200 },
+    { name: "Mango", value: 500 },
+    { name: "Pineapple", value: 100 },
+  ];
+
+  const data2 = [
+    { name: "Monday", uv: 1400, pv: 2400, amt: 1400 },
+    { name: "Tuesday", uv: 2210, pv: 1398, amt: 2210 },
+    { name: "Wednesday", uv: 2290, pv: 9800, amt: 2290 },
+    { name: "Thursday", uv: 2000, pv: 3908, amt: 2000 },
+    { name: "Friday", uv: 2181, pv: 4800, amt: 2181 },
+    { name: "Saturday", uv: 1500, pv: 3800, amt: 1500 },
+    { name: "Sunday", uv: 2100, pv: 4300, amt: 2100 },
+  ];
+
+  const COLORS = ["#8884d8", "#82ca9d", "#ffc658", "#ff8042", "#888888"];
+
   return (
     <div>
       <PanelTitle title={"Dashboard"} />
@@ -489,12 +531,71 @@ const DashboardPanel = ({ theme }) => {
               />
             ))}
           </div>
-          <div className='graph-container'>
+          <div className='graph-container-1'>
             <div className='graph-container'>
               <GraphCardComponent className='graph-1 glass_bg '>
                 <ComponentTitle title={"Graph1"} />
                 <div className='graph-space'>
-                  <BarsDataset />
+                  {/* <BarsDataset /> */}
+                  {/* <AreaChart width='100vw' height={260} data={data2}>
+                    <CartesianGrid strokeDasharray='3 3' />
+                    <XAxis dataKey='name' />
+                    <YAxis />
+                    <Tooltip />
+                    <Legend />
+                    <Area
+                      type='monotone'
+                      dataKey='pv'
+                      fill='#8884d8'
+                      stroke='#8884d8'
+                    />
+                    <Area
+                      type='monotone'
+                      dataKey='uv'
+                      fill='#82ca9d'
+                      stroke='#82ca9d'
+                    />
+                  </AreaChart> */}
+                  <ResponsiveContainer width='100%' height='100%'>
+                    {" "}
+                    {/* Responsive width and fixed height */}
+                    <AreaChart
+                      data={data2}
+                      margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
+                    >
+                      <CartesianGrid strokeDasharray='3 3' />
+                      <XAxis dataKey='name' />
+                      <YAxis />
+                      <Tooltip />
+                      <Area
+                        type='monotone'
+                        dataKey='uv'
+                        stroke='#8884d8'
+                        fill='#8884d8'
+                      />
+                    </AreaChart>
+                  </ResponsiveContainer>
+                  <div className='chart-container'>
+                    {/* <AreaChart width='100' height='100' data={data2}>
+                      <CartesianGrid strokeDasharray='3 3' />
+                      <XAxis dataKey='name' />
+                      <YAxis />
+                      <Tooltip />
+                      <Legend />
+                      <Area
+                        type='monotone'
+                        dataKey='pv'
+                        fill='#8884d8'
+                        stroke='#8884d8'
+                      />
+                      <Area
+                        type='monotone'
+                        dataKey='uv'
+                        fill='#82ca9d'
+                        stroke='#82ca9d'
+                      />
+                    </AreaChart> */}
+                  </div>
                 </div>
               </GraphCardComponent>
               <GraphCardComponent className='graph-1 glass_bg '>
@@ -504,7 +605,31 @@ const DashboardPanel = ({ theme }) => {
               </div> */}
                 <ComponentTitle title={"Graph2"} />
                 <div className='graph-space'>
-                  <PieChart
+                  <ResponsiveContainer width='100%' height='100%'>
+                    {" "}
+                    {/* Responsive width and fixed height */}
+                    <PieChart>
+                      <Pie
+                        data={data}
+                        dataKey='value'
+                        nameKey='name'
+                        cx='50%'
+                        cy='50%'
+                        outerRadius={80}
+                        fill='#8884d8'
+                      >
+                        {data.map((entry, index) => (
+                          <Cell
+                            key={`cell-${index}`}
+                            fill={COLORS[index % COLORS.length]}
+                          />
+                        ))}
+                      </Pie>
+                      <Tooltip />
+                      <Legend />
+                    </PieChart>
+                  </ResponsiveContainer>
+                  {/* <PieChart
                     height={240}
                     series={[
                       {
@@ -531,7 +656,67 @@ const DashboardPanel = ({ theme }) => {
                       },
                     ]}
                     skipAnimation={false}
-                  />
+                  /> */}
+                  {/* <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                    }}
+                  >
+                    <PieChart
+                      height={240}
+                      series={[
+                        {
+                          data: mobileAndDesktopOS
+                            .slice(0, 5)
+                            .map((item, index) => ({
+                              ...item,
+                              color: [
+                                "rgba(255, 0, 0, 0.52)",
+                                "rgba(11, 11, 235, 0.63)",
+                                "rgba(15, 224, 15, 0.71)",
+                                "rgba(255, 165, 21, 0.65)",
+                                "#8857a5",
+                              ][index],
+                            })),
+                          innerRadius: 50,
+                          arcLabelMinAngle: 0,
+                          labelContent: () => null,
+                        },
+                      ]}
+                      skipAnimation={false}
+                    />
+
+                    <div style={{ marginTop: "20px", textAlign: "center" }}>
+                      {mobileAndDesktopOS.slice(0, 5).map((item, index) => (
+                        <div
+                          key={index}
+                          style={{
+                            display: "flex",
+                            alignItems: "center",
+                            marginBottom: "8px",
+                          }}
+                        >
+                          <div
+                            style={{
+                              width: "12px",
+                              height: "12px",
+                              backgroundColor: [
+                                "rgba(255, 0, 0, 0.52)",
+                                "rgba(11, 11, 235, 0.63)",
+                                "rgba(15, 224, 15, 0.71)",
+                                "rgba(255, 165, 21, 0.65)",
+                                "#8857a5",
+                              ][index],
+                              marginRight: "8px",
+                            }}
+                          />
+                          <span>{item.label}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div> */}
                 </div>
                 {/* </ResponsiveChartContainer> */}
               </GraphCardComponent>
