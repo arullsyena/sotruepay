@@ -1,8 +1,13 @@
 import "./PanelTitle.css";
+import styled from "styled-components";
+
+const H2CardComponent = styled.h2`
+  color: ${(props) => props.theme.color};
+`;
 function PanelTitle({ title }) {
   return (
     <div className='panel-title glass_bg'>
-      <h2>{title ? title : "Dashboard"}</h2>
+      <H2CardComponent>{title ? title : "Dashboard"}</H2CardComponent>
     </div>
   );
 }
