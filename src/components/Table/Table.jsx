@@ -382,7 +382,7 @@ const GridExample = ({ flag, columnDefs, rows, theme }) => {
   const getRowStyle = (params) => {
     if (params.node.rowIndex % 2 === 1 && isLightTheme) {
       // Style odd rows
-      return { background: "rgb(239 239 239)" }; // Light gray background for odd rows
+      // return { background: "rgb(239 239 239)" }; // Light gray background for odd rows
     }
 
     if (params.node.rowIndex % 2 === 1 && !isLightTheme) {

@@ -80,7 +80,12 @@ const InfoCard = ({
         <div className='card--right'>
           {/* <CircularProgress size='lg' determinate value={0}> */}
           {/* <div className='circle'> */}
-          {Icon && <Icon sx={{ fontSize: "3rem", color: "rgb(5, 233, 80)" }} />}
+          {Icon && (
+            <Icon
+              className='flip'
+              sx={{ fontSize: "3rem", color: "rgb(5, 233, 80)" }}
+            />
+          )}
           {/* </div> */}
           {/* </CircularProgress> */}
         </div>

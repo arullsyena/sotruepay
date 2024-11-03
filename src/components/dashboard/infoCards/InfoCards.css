@@ -107,7 +107,7 @@
 
   .flip {
 	backface-visibility: visible !important;
-	animation: flip 5s ease infinite;
+	animation: flip 4s ease forwards;
 }
 @keyframes flip {
 	0% {
@@ -115,19 +115,19 @@
 		animation-timing-function: ease-out;
 	}
 	40% {
-		transform: perspective(400px) translateZ(150px) rotateY(170deg);
+		transform: perspective(400px)  rotateY(170deg);
 		animation-timing-function: ease-out;
 	}
 	50% {
-		transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+		transform: perspective(400px)  rotateY(190deg) ;
 		animation-timing-function: ease-in;
 	}
 	80% {
-		transform: perspective(400px) rotateY(360deg) scale(.95);
+		transform: perspective(400px) rotateY(360deg) ;
 		animation-timing-function: ease-in;
 	}
 	100% {
-		transform: perspective(400px) scale(1);
+		transform: perspective(400px) ;
 		animation-timing-function: ease-in;
 	}
 }

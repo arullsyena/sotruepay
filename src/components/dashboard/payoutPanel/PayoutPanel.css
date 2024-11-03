@@ -118,14 +118,38 @@
     margin: 10px;
 }
 
-.payout-panel-forms {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
+
 
 .fund-transfer-form-container {
     display: flex;
     flex-direction: column;
     margin: 10px;
     height: 100%;
+}
+
+@media (max-width: 768px) {
+
+.pc-cards {
+  /* width: 98%; */
+  height: 50%;
+  /* background-color: beige; */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-evenly;
+}
+
+.payout-panel-forms {
+  display: grid;
+  grid-template-row: 1fr 1fr;
+
+}
+}
+
+@media (min-width: 1025px) 
+{
+  .payout-panel-forms {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
 }
