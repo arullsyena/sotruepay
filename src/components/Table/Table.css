@@ -20,6 +20,13 @@
     color: rgb(171, 149, 149); /* Change header text color */
   }
   
+  .ag-theme-alpine-dark .ag-paging-panel  {
+    background-color: #071125;
+  }
+
+  .ag-theme-alpine-dark  .ag-center-cols-viewport {
+    background-color: #071125;
+  }
   .light-theme .ag-header {
     background-color: #f5f5f5; /* Light mode header background */
     color: rgb(255, 72, 72); /* Light mode header text color */
@@ -75,7 +82,7 @@
   .ag-theme-alpine-dark .ag-header-cell-text {
    color: rgb(235, 235, 235); /* Change header text color */
   }
-
+ 
   .ag-root-wrapper {
     border: none !important;
   }
