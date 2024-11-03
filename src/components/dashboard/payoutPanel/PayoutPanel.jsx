@@ -282,7 +282,7 @@ function PayoutPanel({ theme }) {
 
                 <div className='spacer'></div>
                 <FormCardComponent>
-                  <Form>
+                  {/* <Form>
                     <div className='parallel-field-not'>
                       <Form.Group
                         className='mb-3 form-f'
@@ -347,12 +347,87 @@ function PayoutPanel({ theme }) {
                     >
                       Submit
                     </Button>
-                    {/* <div className='spacer'></div> */}
+                   
+                  </Form> */}
+                  <Form>
+                    {/* Group fields in rows for better responsiveness */}
+                    <div className='row'>
+                      <div className='col-md-6'>
+                        <Form.Group
+                          className='mb-3 form-f'
+                          controlId='exampleForm.ControlTextarea1'
+                        >
+                          <Form.Label>Name</Form.Label>
+                          <Form.Control type='text' placeholder='Enter Name' />
+                        </Form.Group>
+                      </div>
+                      <div className='col-md-6'>
+                        <Form.Group
+                          className='mb-3 form-f'
+                          controlId='exampleForm.ControlTextarea2'
+                        >
+                          <Form.Label>Account Number</Form.Label>
+                          <Form.Control
+                            type='text'
+                            placeholder='Enter Account Number'
+                          />
+                        </Form.Group>
+                      </div>
+                    </div>
+                    <div className='row'>
+                      <div className='col-md-6'>
+                        <Form.Group
+                          className='mb-3 form-f'
+                          controlId='exampleForm.ControlTextarea3'
+                        >
+                          <Form.Label>IFSC Code</Form.Label>
+                          <Form.Control
+                            type='text'
+                            placeholder='Enter IFSC Code'
+                          />
+                        </Form.Group>
+                      </div>
+                      <div className='col-md-6'>
+                        <Form.Group
+                          className='mb-3 form-f'
+                          controlId='exampleForm.ControlTextarea5'
+                        >
+                          <Form.Label>Phone Number</Form.Label>
+                          <Form.Control
+                            type='text'
+                            placeholder='Enter Phone Number'
+                          />
+                        </Form.Group>
+                      </div>
+                    </div>
+                    <div className='row'>
+                      <div className='col-md-6'>
+                        <Form.Group
+                          className='mb-3 form-f'
+                          controlId='exampleForm.ControlTextarea4'
+                        >
+                          <Form.Label>Amount</Form.Label>
+                          <Form.Control
+                            type='text'
+                            placeholder='Enter Amount'
+                          />
+                        </Form.Group>
+                      </div>
+                    </div>
+                    <div className='d-flex justify-content-center mt-3'>
+                      <Button
+                        className='green-btn'
+                        variant='primary'
+                        type='submit'
+                      >
+                        Submit
+                      </Button>
+                    </div>
                   </Form>
                 </FormCardComponent>
               </div>
             </div>
-            <div className='table-container'>
+            <div className='table-container glass_bg'>
               <ComponentTitle title={"Transfer Details"}></ComponentTitle>
               <Table columnDefs={columnDefs} rows={makeData()} theme={theme} />
             </div>

@@ -1,155 +1,155 @@
 .payout-container {
-    margin: 1rem 5px;
-    height: 100%;
-    /* background-color: aqua; */
-    
-    width: cal(100% - 10px);
-    /* box-sizing: content-box; */
+  margin: 1rem 5px;
+  height: 100%;
+  /* background-color: aqua; */
+
+  width: cal(100% - 10px);
+  /* box-sizing: content-box; */
 }
 
 .fund-transfer-form {
-    /* width: 48.5%; */
-    height: 90%;
-    padding: 0 3% 2% 3%;
-    /* box-shadow: rgba(5, 233, 80)  0px 5px 5px, rgba(0, 0, 0, 0.05) 0px 5px 5px; */
-    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset; */
-    /* background-color: beige; */
-    margin-bottom: 1rem;
+  /* width: 48.5%; */
+  height: 90%;
+  padding: 0 3% 2% 3%;
+  /* box-shadow: rgba(5, 233, 80)  0px 5px 5px, rgba(0, 0, 0, 0.05) 0px 5px 5px; */
+  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset; */
+  /* background-color: beige; */
+  margin-bottom: 1rem;
 }
 
 .spacer {
-    height: 3vh;
-    width: 100%;
-    /* background-color: aqua; */
+  height: 3vh;
+  width: 100%;
+  /* background-color: aqua; */
 }
 
 .mb-3 {
-    display: flex;
-    /* justify-content: flex-start; */
-    align-items: flex-start;
-    flex-direction: column;
+  display: flex;
+  /* justify-content: flex-start; */
+  align-items: flex-start;
+  flex-direction: column;
 }
 
 .form-f {
-/* width: 40%; */
+  /* width: 40%; */
 }
 
 .pc-1 {
-    display: flex;
-    /* justify-content: center; */
-    flex-direction: column;
-    margin-bottom: 1%;
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+  margin-bottom: 1%;
 }
-
-.pc-cards {
-    /* width: 98%; */
-    height: 20%;
-    /* background-color: beige; */
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: space-evenly;
-}
-
-.green-btn {
-    background-color: rgb(5, 233, 80) !important;
-}
-
-/* MODALL */
-
-
-.modal-window {
-    position: fixed;
-    background-color: rgba(255, 255, 255, 0.25);
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 999;
-    visibility: hidden;
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.3s;
-    &:target {
-      visibility: visible;
-      opacity: 1;
-      pointer-events: auto;
-    }
-    & > div {
-      width: 400px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      padding: 2em;
-      background: white;
-    }
-    header {
-      font-weight: bold;
-    }
-    h1 {
-      font-size: 150%;
-      margin: 0 0 15px;
-    }
-  }
-  
-  .modal-close {
-    color: #aaa;
-    line-height: 50px;
-    font-size: 80%;
-    position: absolute;
-    right: 0;
-    text-align: center;
-    top: 0;
-    width: 70px;
-    text-decoration: none;
-    &:hover {
-      color: black;
-    }
-  }
-  
-.parallel-field {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
-
-.table-container {
-    margin: 10px;
-}
-
-
-
-.fund-transfer-form-container {
-    display: flex;
-    flex-direction: column;
-    margin: 10px;
-    height: 100%;
-}
-
-@media (max-width: 768px) {
 
 .pc-cards {
   /* width: 98%; */
-  height: 50%;
+  height: 20%;
   /* background-color: beige; */
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-end;
   justify-content: space-evenly;
 }
 
-.payout-panel-forms {
-  display: grid;
-  grid-template-row: 1fr 1fr;
-
-}
+.green-btn {
+  background-color: rgb(5, 233, 80) !important;
 }
 
-@media (min-width: 1025px) 
-{
+/* MODALL */
+
+.modal-window {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.25);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+  &:target {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  & > div {
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2em;
+    background: white;
+  }
+  header {
+    font-weight: bold;
+  }
+  h1 {
+    font-size: 150%;
+    margin: 0 0 15px;
+  }
+}
+
+.modal-close {
+  color: #aaa;
+  line-height: 50px;
+  font-size: 80%;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 70px;
+  text-decoration: none;
+  &:hover {
+    color: black;
+  }
+}
+
+.parallel-field {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.table-container {
+  margin: 10px;
+}
+
+.fund-transfer-form-container {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .pc-cards {
+    /* width: 98%; */
+    height: 50%;
+    /* background-color: beige; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-evenly;
+  }
+
+  .payout-panel-forms {
+    display: grid;
+    grid-template-row: 1fr 1fr;
+  }
+
+  .fund-transfer-form-container{
+    width: 77.5%;
+  }
+
+ 
+}
+
+@media (min-width: 1025px) {
   .payout-panel-forms {
     display: grid;
     grid-template-columns: 1fr 1fr;
-}
+  }
 }
