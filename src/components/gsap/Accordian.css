@@ -6,6 +6,11 @@
     
   }
   
+
+  .securityCard .card{
+    height: 186px !important;
+  }
+
   .card {
     /* background: linear-gradient(200deg, #ffffff 13.57%, rgb(232, 232, 232) 98.38%); */
     /* width: max(50vw, 280px); */
