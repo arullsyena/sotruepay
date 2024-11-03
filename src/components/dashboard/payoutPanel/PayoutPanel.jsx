@@ -182,13 +182,14 @@ function PayoutPanel({ theme }) {
   const flag = true;
 
   const columnDefs = [
-    { field: "Name", filter: true, flex: 1 },
-    { field: "Account_Number", filter: true, flex: 1 },
-    { field: "Amount", filter: true, width: 230, flex: 1 },
+    { field: "Name", filter: true, width: 150 },
+    { field: "Account_Number", filter: true, width: 200 },
+    { field: "Amount", filter: true, width: 130 },
 
     {
       field: flag ? "Actions" : "transaction_amount",
       filter: true,
+      width: 130,
       ...(flag && {
         cellRenderer: (params) => {
           let label = "Success";
@@ -207,7 +208,7 @@ function PayoutPanel({ theme }) {
     },
     {
       field: "status",
-      flex: 1,
+      width: 130,
       filter: true, // Enable filtering for this column
       cellRenderer: (params) => {
         let label = "Success";
@@ -230,7 +231,7 @@ function PayoutPanel({ theme }) {
     {
       field: "Date",
       filter: true,
-      flex: 1.5,
+      width: 160,
     },
   ];
   console.log("modll", open);
