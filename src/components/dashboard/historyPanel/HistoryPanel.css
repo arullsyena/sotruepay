@@ -84,10 +84,33 @@
 }
 
 
+.date-pickers {
 
+    display: flex;
+    flex-direction: row;
+    width: 35%;
+    justify-content: space-evenly;
+    margin: 0 2%;
+}
+
+.date-picker {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0.2%;
+}
+.dp-input {
+    margin: 0 3% !important;
+}
 
 .date-picker-container {
    
+}
+.dp-input{
+    margin: 0;
+    padding: 0;
 }
 /* 
 
@@ -133,3 +156,46 @@
 .date-label:hover .date-icon {
     color: #388E3C;
 } */
+
+@media (max-width: 768px) {
+    .dp-input {
+      color: #787c78;
+    }
+    
+    .date-pickers {
+        display: flex;
+        flex-direction: column;
+        width: 57%;
+        justify-content: space-evenly;
+    }
+
+    .date-picker {
+        display: flex;
+       
+        justify-content: space-between;
+    }
+
+    .date-picker-container{
+        height: 15%;
+    }
+
+    .date-input {
+        width: 30vw;
+    }
+
+    .date-picker-container > * {
+        padding: 0 1% !important;
+        margin: 1% 1% !important;
+        height: 94% !important;
+    }
+
+    #green-btn {
+       height: 50% !important;
+    }
+    
+    #yellow-btn {
+        height: 50% !important;
+    }
+    
+
+}

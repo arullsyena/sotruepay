@@ -86,3 +86,34 @@
     /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
     /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset; */
   }
+
+
+
+  
+
+/* Hide total page count and display only arrows for mobile */
+/* .ag-theme-alpine .ag-paging-panel span.ag-paging-panel-summary-panel {
+    display: none;
+} */
+/* 
+.ag-theme-alpine .ag-paging-panel button {
+    padding: 0 10px;
+} */
+@media (max-width: 768px) {
+.ag-theme-alpine .ag-paging-panel {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem; 
+  flex-direction: column
+}
+.ag-paging-panel {
+height: 13% !important;
+padding: 2% !important;
+margin-bottom: 2% !important;
+}
+
+.ag-paging-panel > * {
+ 
+  margin-bottom: 2% !important;
+  }
+}

@@ -280,21 +280,22 @@ const HistoryPanel = ({ theme }) => {
     {
       field: "changed_at",
       filter: true,
-      flex: 1.5,
+      width: 160,
     },
-    { field: "transaction_id", filter: true, flex: 1 },
-    { field: "transaction_type", filter: true, flex: 1 },
-    { field: "old_value", filter: true, width: 230, flex: 1 },
+    { field: "transaction_id", filter: true, width: 130 },
+    { field: "transaction_type", filter: true, width: 150 },
+    { field: "old_value", filter: true, width: 230, width: 130 },
     {
       field: "new_value",
       filter: true,
       // width: isSmallScreen ? 100 : 300,
-      flex: 1,
+      width: 130,
       cellClass: "table-cell",
     },
 
     {
       field: flag ? "Actions" : "transaction_amount",
+      width: 150,
       filter: true,
       ...(flag && {
         cellRenderer: (params) => {
@@ -314,7 +315,8 @@ const HistoryPanel = ({ theme }) => {
     },
     {
       field: "status",
-      flex: 1,
+      width: 130,
+
       filter: true, // Enable filtering for this column
       cellRenderer: (params) => {
         let label = "Success";
@@ -392,13 +394,27 @@ const HistoryPanel = ({ theme }) => {
 
         <div className='transaction-table-1 glass_bg '>
           <div className='date-picker-container'>
-            <div className='date-picker'>
-              <input type='date' className='date-input' id='date' name='date' />
-              {/* <label for='date' className='date-label'></label> */}
-            </div>
-            <div className='date-picker'>
-              <input type='date' className='date-input' id='date' name='date' />
-              {/* <label for='date' className='date-label'></label> */}
+            <div className='date-pickers'>
+              <div className='date-picker'>
+                <p className='dp-input'>From:</p>
+                <input
+                  type='date'
+                  className='date-input'
+                  id='date'
+                  name='date'
+                />
+                {/* <label for='date' className='date-label'></label> */}
+              </div>
+              <div className='date-picker'>
+                <p className='dp-input'>To:</p>
+                <input
+                  type='date'
+                  className='date-input'
+                  id='date'
+                  name='date'
+                />
+                {/* <label for='date' className='date-label'></label> */}
+              </div>
             </div>
             <Button id='green-btn'>Submit</Button>
             <Button id='yellow-btn'>Download</Button>
